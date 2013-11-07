@@ -1,0 +1,6 @@
+a = a + 1;
+zrot = (zrot + 10) % 360;
+set view xrot, zrot;
+splot ((x-1)**2+4*(y+2)**2-1)/4;
+pause 0.001;
+if (a<50) reread;
