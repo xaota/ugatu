@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l nodes=16:ppn=8:student
+#PBS -N rinat
+cd /gpfs/home/student/pmi34/Rinat
+
+date
+
+HOSTFILE=${PBS_JOBID}.hosts
+cat ${PBS_NODEFILE} | sort | uniq > ${HOSTFILE}
+NUM_NODES=`cat ${HOSTFILE} | wc -l`; cat ${HOSTFILE}
+
+mpirun -r ssh -f ${HOSTFILE} -ppn 8 -n 256  ./main 15000000000

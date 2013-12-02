@@ -3,20 +3,20 @@
 #include <math.h>
 #include <mpi.h>
 
-double f(long long int index){ // расчёт значения члена ряда с номером index
+double f(unsigned long long int index){
  return sin(1 / pow(index, 2)) / pow(5 * index - 1, 2);
 }
 
-double sum(long long int start, long long int end){ // выполняет поиск частичных сумм начиная с индекса start и до end
+double sum(unsigned long long int start, unsigned long long int end){
  double s = 0;
- for(long int i = start; i < end; ++i){
+ for(unsigned long long int i = start; i < end; ++i){
   s += f(i);
  }
  return s;
 }
 
 int main(int argc, char *argv[]){
- long long int N; // размерность ряда
+ unsigned long long int N; // размерность ряда
  double s; // частичная сумма ряда
  int comm_size, comm_rank; // количество процессоров и номер процессора
  double global_start_time, global_end_time, global_work_time; // время работы
@@ -29,10 +29,10 @@ int main(int argc, char *argv[]){
 
  if(comm_rank == 0) global_start_time = MPI_Wtime(); // главный процесс запоминает время начала расчёта
 
- int partials = N / comm_size;
- long long int m = N % comm_size;
- long long int start = comm_rank * partials + 1;
- long long int end = (comm_rank + 1) * partials + 1;
+ unsigned long long int partials = N / comm_size;
+ unsigned long long int m = N % comm_size;
+ unsigned long long int start = comm_rank * partials + 1;
+ unsigned long long int end = (comm_rank + 1) * partials + 1;
  if(m > 0){
   if(comm_rank < m){
    start += comm_rank;
@@ -70,7 +70,7 @@ int main(int argc, char *argv[]){
 
  MPI_Barrier(MPI_COMM_WORLD); // ждём все процессы
  if(comm_rank == 0){
-  fprintf(stderr, "global work time: %lf s; global sum of %lld elements = %lf\n", global_work_time, N, s); // вывод результата и времени работы всей программы
+  fprintf(stderr, "global work time: %lf s; global sum of %lld elements = %lf\n", global_work_time, N, global_sum);
  }
  MPI_Finalize(); // конец параллелизации
  return 0; // конец программы
