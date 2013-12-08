@@ -54,9 +54,10 @@ int main(int argc, char *argv[]){
   MPI_Send(&s, 1, MPI_DOUBLE, 0, comm_size * comm_rank, MPI_COMM_WORLD); // посылаем главному процессу результат
  }
 
+ double global_sum = 0;
  if(comm_rank == 0){ // если процесс главный
   double partial_sum;
-  double global_sum = s; // глобальная сумма пока это частичная сумма, посчитанная главным процессом
+  global_sum = s; // глобальная сумма пока это частичная сумма, посчитанная главным процессом
   MPI_Status status;
   for(int i = 1; i < comm_size; ++i){ // принимаем все частичные суммы от других процессов
    MPI_Recv(&partial_sum, 1, MPI_DOUBLE, i, comm_size * i, MPI_COMM_WORLD, &status);
