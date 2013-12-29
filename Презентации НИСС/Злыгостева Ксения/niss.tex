@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+% Стиль презентации
+\usetheme{Warsaw}
+
+\begin{document}
+
+
+\title{Метод каскадного интегрирования Лапласа}  
+\author{Злыгостева Ксения}
+\date{Уфа, 2013} 
+% Создание заглавной страницы
+\frame{\titlepage} 
+% Автоматическая генерация содержания
+\frame{\frametitle{Содержание}\tableofcontents
+Описываются уравнения с нулевыми инвариантами $h=0$,$k=0$.} 
+\begin{frame}{Постановка задачи}
+Описать все уравнения $u_xy=f(u,u_x,u_y)$ для которых инварианты линеаризованного уравнения $v_{xy}-f_uv-f_{u_x}v_x-f_{u_y}v_y=0$ нулевые $h=0,k=0$.
+\end{frame}
+
+
+
+\begin{frame}{Практическая часть}
+\textbf{Теорема}: В уравнении  $u_xy=f(u,u_x,u_y)$ инварианты $h$ и $k$ принимают нулевые значения  $<=>$  $f=A(u)u_xu_y+Bu_x+Cu_y+D(u)$, 
+$B=Const$,$C=Const$,$-A(u)D(u)+BC+D^{'}(u)=0$.
+
+\end{frame}
+
+
+
+\begin{frame}{Практическая часть}
+\textbf{Доказательство}: Уравнение $u_xy=f(u,u_x,u_y)$ дифференцированием $u_\tau=v$,где $u=u(x,y,\tau)$ приводим к уравнению вида $v_xy=f_uv+f_{u_x}v_x+f_{u_y}v_y$.
+$v_xy+av_x+bv_y+cv=0$, где $a=-f_{u_x},b=-f_{u_y},c=-f_u$
+\centerline {Пусть $h=0$ и $k=0$,тогда}
+\centerline{$h = a_x + ab - c=0$      (1)}
+\centerline{$k = b_y + ab - c=0$      (2)}
+
+
+\end{frame}
+
+\begin{frame}{Практическая часть}
+\centerline{$h=0$}
+\centerline{ $h=D(-f_{u_x})+f_{u_x} f_{u_y}+f_u=-f_{u_x u} u_x-f_{u_x u_y } u_{xy}- f_{u_x u_x } u_{xx}+f_{u_x} f_{u_y }+f_u=0 $}                 
+\centerline{$k=0$}
+\centerline{ $k=D(-f_{u_y} )+f_{u_x} f_{u_y}+f_u=-f_{u_y u} u_y-f_{u_y u_x} u_{yx}- f_{u_y u_y } u_{yy}+f_{u_x} f_{u_y}+f_u=0$}
+\end{frame}
+
+\begin{frame}{Практическая часть}
+
+$f_{u_x u_x }=f_{u_y u_y }=0 $    \\
+$f=A(u) u_x u_y+B(u) u_x+C(u) u_y+D(u)$\\
+$f_{u_x }=A(u) u_y+B(u)$\\
+$f_{u_x u}=A^{'} (u) u_y+B^{'}  (u)$\\
+$f_{u_x u_y}=A(u)$\\
+$f_{u_y }=A(u) u_x+C(u)$\\
+$f_u=A^{'}  (u) u_x u_y+B^{'}  (u) u_x+C^{'}  (u) u_y+D^{'}  (u)$\\
+$f_{u_y u}=A^{'}  (u) u_x+C^{'}  (u)$\\
+
+\end{frame}
+
+\begin{frame}{Практическая часть}
+
+Подставляем найденную функцию в (1):
+\\ $h=-A^{'}  (u) u_y u_x+B^{'}  (u) u_x-A(u) u_{xy}+(A(u) u_y+B(u) )(A(u) u_x+C(u) )+A^{'}  (u) u_x u_y+B^{'}  (u) u_x+C^{'}  (u) u_y+D^{'}  (u)=-A(u)^{2} u_x u_y-A(u)B(u) u_x-A(u)C(u) u_y-A(u)D(u)+A(u)^{2} u_y u_x+B(u)A(u) u_x+A(u) C(u)u_y+B(u)C(u)+C^{'}  (u) u_y+D^{'}  (u)=-A(u)D(u)+B(u)C(u)+C^{'}  (u) u_y+D^{'}  (u)=0$
+\\ $h=0$ при условии  $-A(u)D(u)+B(u)C(u)+C^{'}  (u) u_y+D^{'}  (u)=0$
+\\ $C^{'}  (u)=0$ и  $-A(u)D(u)+B(u)C(u)+D^{'}  (u)=0$
+\\ $C=$Const,$-A(u)D(u)+B(u)C+D^{'} (u)=0 $
+\end{frame}
+
+
+\begin{frame}
+Подставляем найденную функцию в (2):
+\\ $k=-A^{'}  (u) u_x u_y-C^{'}  (u) u_y-A(u) u_{xy}+A(u)^{2} u_y u_x+B(u)A(u) u_x+A(u) C(u)u_y+B(u)C(u)+A^{'}  (u) u_x u_y+B^{'}  (u) u_x+C^{'}  (u) u_y+D^{'}  (u)=-A(u)^{2} u_x u_y-A(u)B(u) u_x-A(u)C(u) u_y-A(u)D(u)+A(u)^{2} u_y u_x+B(u)A(u) u_x+A(u) C(u)u_y+B(u)C(u)+B^{'}  (u) u_x+D^{'}  (u)=-A(u)D(u)+B(u)C(u)+B^{'}  (u) u_x+D^{'}  (u)=0$
+ \\$k=0$ при условии $-A(u)D(u)+B(u)C(u)+B^{'}  (u) u_x+D^{'}  (u)=0$
+ \\$B^{'}  (u)=0$ и $-A(u)D(u)+B(u)C(u)+D^{'}  (u)=0$
+\\ $B=$Const,$-A(u)D(u)+BC+D^{'} (u)=0$
+
+\end{frame}
+
+\begin{frame}{Заключение}
+В данной курсовой работе были описаны уравнения $u_xy=f(u,u_x,u_y)$ для которых инварианты линеаризованного уравнения $v_{xy}-f_uv-f_{u_x}v_x-f_{u_y}v_y=0$ нулевые $h=0,k=0$.
+\end{frame}
+
+
+
+\begin{frame}{Список литературы}
+Жибер А.В., Соколов В.В. Метод каскадного интегрирования Лапласа и уравнения, интегрируемые по Дарбу: Учебное пособие /Изд-е Башкирского ун-та. –Уфа, 1996.
+\end{frame}
+
+\end{document}
