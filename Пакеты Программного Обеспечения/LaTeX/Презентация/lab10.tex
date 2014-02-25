@@ -1,0 +1,91 @@
+\documentclass{beamer}
+\usepackage[english,russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtext}
+% Стиль презентации
+\usetheme{Singapore}
+\usecolortheme{default}
+
+\begin{document}
+\title{Моделирование процесса прокатки титанового прутка в пакете Deform 3D}  
+\author{Ибрагимов Ринат, ОНФ ПМИ-34}
+\date{УГАТУ, 2013}
+% Создание заглавной страницы
+\frame{\titlepage}
+\begin{frame}{Содержание}
+ \tableofcontents
+\end{frame}
+\begin{frame}{}
+\transdissolve[duration=0.2]
+ Описание процесса моделирования прокатки титанового прутка в программе «Deform 3D» и анализ результатов с целью дальнейшего изучения изменения зернистости  металла
+\end{frame}
+\section{Постановка задачи}
+\begin{frame}{Постановка задачи}
+ \transdissolve[duration=0.2]
+ \begin{itemize}
+  \item<1-> \color<1-2>{red} Изучить систему конечно-элементного моделирования DEFORM-3D, предназначенную для анализа трёхмерного течения металла при различных процессах обработки металла давлением.
+  \item<2-> \color<2>{green} Пользуясь системой DEFORM смоделировать процесс прокатки титанового прутка метровой длины и оценить изменения произошедшие в его геометрии в результате процесса.
+ \end{itemize}
+\end{frame}
+\section{Практическая часть}
+\begin{frame}{Практическая часть}
+\label{1.1}
+В Пакете Deform 3D смоделирован механизм, состоящий из двух вращающихся валов и направляющей трубки, в которую будет помещаться пруток.
+
+Валы вращаются таким образом, что протскивают пруток между собой, обжимая его, при этом расширяя и удлинняя.
+
+Расстояние между валами равно пяти миллиметрам.
+\end{frame}
+
+\begin{frame}{}
+\label{1.2}
+\begin{figure}[h]
+ \includegraphics[width=3in]{img/step52.JPG}
+ \footnotesize\caption{Вид установки в момент расчёта}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+\label{1.3}
+\begin{figure}[h]
+ \includegraphics[width=3in]{img/step207.JPG}
+ \footnotesize\caption{Вид установки в конце расчёта}
+\end{figure}
+\end{frame}
+
+\begin{frame}{}
+\label{1.4}
+\begin{figure}[h]
+ \includegraphics[width=3in]{img/step207_3.JPG}
+ \footnotesize\caption{Вид прутка в конце расчёта}
+\end{figure}
+\end{frame}
+
+\section{Дополнительно}
+\begin{frame}{}
+В процессе выполнения работы таже были проверены другие материалы и температуры
+\begin{figure}[h]
+ \includegraphics[width=3in]{img/164_2.JPG}
+ \footnotesize\caption{Алюминиевый прут}
+\end{figure}
+\end{frame}
+
+\section{Заключение}
+\begin{frame}{Заключение}
+С помощью системы DEFORM-3D удалось \hyperlink{1.3}{смоделировать процесс прокатки титанового прута 1000x15мм}, и оценить его \hyperlink{1.4}{деформации}.
+При сжатии до высоты в 7мм, происходит удлинение более чем в полтора раза, расширение приблизительно до 24мм, и изгибы, из-за которых, к сожалению, не удаётся точно измерить получившуюся геометрию средствами DEFORM.
+\end{frame}
+
+\section{Список литературы}
+\begin{frame}{Список литературы}
+В.С. Паршин, А.П. Карамышев, И.И. Некрасов, А.И. Пугин, А.А. Федулов
+Учебное пособие под редакцией д-ра технических наук Ю.Б. Чечулина
+Практическое руководство к программному компексу DEFORM-3D
+Екатеринбург, УрФУ, 2010
+\end{frame}
+
+\begin{frame}{Спасибо за внимание!}
+\vfill
+\centering\LaTeX
+\end{frame}
+\end{document}
