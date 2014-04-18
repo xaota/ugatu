@@ -3,7 +3,8 @@
 #include <math.h>
 #include <mpi.h>
 
-double f(unsigned long long int index){
+static inline double f(unsigned long long int index){
+ // return sin(1 / (index * index)) / ((5 * index - 1) * (5 * index - 1));
  return sin(1 / pow(index, 2)) / pow(5 * index - 1, 2);
 }
 
