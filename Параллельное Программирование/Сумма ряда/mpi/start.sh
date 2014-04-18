@@ -2,6 +2,9 @@
 
 ./compile.sh
 
+./launch.sh 1 1 3400000000
+./launch.sh 1 2 3400000000
+./launch.sh 1 4 3400000000
 ./launch.sh 1 8 3400000000
 ./launch.sh 2 16 3400000000
 ./launch.sh 4 32 3400000000
