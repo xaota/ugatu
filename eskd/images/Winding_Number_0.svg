@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="361"
+   height="361"
+   id="svg35417"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   version="1.0"
+   sodipodi:docbase="C:\Documents and Settings\Jim\Desktop\Wikipedia\Winding Number"
+   sodipodi:docname="Winding Number 0.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs35419" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="744"
+     inkscape:window-height="573"
+     inkscape:window-x="115"
+     inkscape:window-y="161" />
+  <metadata
+     id="metadata35422">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1033.7858,-323.29074)">
+    <path
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#bbb;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1370.2857,503.79075 C 1370.8197,562.19989 1320.4432,611.25461 1262.2857,611.79075 C 1204.1283,612.32689 1154.8194,562.1999 1154.2857,503.79075 C 1153.7517,445.38161 1204.1283,396.32689 1262.2857,395.79075 C 1320.1411,395.25738 1369.2828,445.69127 1370.2857,503.79075"
+       id="path34391"
+       sodipodi:nodetypes="csssc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bbb;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1356.2857,517.29075 L 1370.1857,492.79075 L 1383.9857,517.29075"
+       id="path35362"
+       sodipodi:nodetypes="ccc" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path35364"
+       sodipodi:cx="418.96075"
+       sodipodi:cy="646.10364"
+       sodipodi:rx="10.960155"
+       sodipodi:ry="10.253048"
+       d="M 424.4471,637.22763 A 10.960155,10.253048 0 1 1 422.87812,636.52786"
+       sodipodi:start="5.2366483"
+       sodipodi:end="11.361077"
+       sodipodi:open="true"
+       transform="matrix(1.0948213,0,0,1.1694688,635.59855,-251.80729)" />
+  </g>
+</svg>

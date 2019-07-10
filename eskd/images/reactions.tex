@@ -1,0 +1,21 @@
+\begin{figure}[htb]
+  \centering
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=4.8cm, semithick]
+    % \tikzstyle{every state}=[fill=red,draw=none,text=white]
+
+    \node[state] (label)                    {метка};
+    \node[state] (story)  [right of=label]  {история};
+    \node[state] (client) [right of=story]  {клиент};
+    \node[state] (group)  [right of=client] {группа};
+
+    \path(label)  edge              node {}      (story)
+        (client)  edge [bend right] node {отзыв} (story)
+                  edge              node {на} (story)
+                  edge [bend left]  node {историю} (story)
+
+        (group)   edge              node {} (client);
+        % (group)  edge [loop below] node {1,1,R} (group)
+                %  edge              node {0,1,R} (story);
+  \end{tikzpicture}
+  \caption{Схема <<обогащения>> реакциями}
+\end{figure}

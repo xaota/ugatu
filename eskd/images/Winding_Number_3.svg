@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="361"
+   height="361"
+   id="svg35454"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   version="1.0"
+   sodipodi:docbase="C:\Documents and Settings\Jim\Desktop\Wikipedia\Winding Number"
+   sodipodi:docname="Winding Number 3.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs35456" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="744"
+     inkscape:window-height="573"
+     inkscape:window-x="69"
+     inkscape:window-y="121" />
+  <metadata
+     id="metadata35459">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1033.7858,-334.71933)">
+    <path
+       id="path11076"
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#bbb;stroke-width:6;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1"
+       d="M 1370.2857,515.21933 C 1370.2857,432.28673 1298.808,359.21933 1214.2857,359.21933 C 1129.7634,359.21933 1058.2857,432.28673 1058.2857,515.21933 M 1322.2857,515.21933 C 1322.2857,458.91523 1272.2457,407.21933 1214.2857,407.21933 C 1156.3257,407.21933 1106.2857,458.91523 1106.2857,515.21933 M 1274.2857,515.21933 C 1274.2857,485.41073 1245.7501,455.21933 1214.2857,455.21933 C 1182.8213,455.21933 1154.2857,485.41073 1154.2857,515.21933 M 1322.2857,515.21933 C 1322.2857,554.84763 1282.8627,599.21933 1238.2857,599.21933 C 1193.7086,599.21933 1154.2857,554.84763 1154.2857,515.21933 M 1370.2857,515.21933 C 1370.2857,585.63613 1309.9273,647.21933 1238.2857,647.21933 C 1166.6442,647.21933 1106.2857,585.63613 1106.2857,515.21933 M 1274.2857,515.21933 C 1274.2857,585.93543 1224.9075,647.21933 1166.2857,647.21933 C 1107.6641,647.21933 1058.2857,585.93543 1058.2857,515.21933" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path34388"
+       sodipodi:cx="418.96075"
+       sodipodi:cy="646.10364"
+       sodipodi:rx="10.960155"
+       sodipodi:ry="10.253048"
+       d="M 424.4471,637.22763 A 10.960155,10.253048 0 1 1 422.87812,636.52786"
+       sodipodi:start="5.2366483"
+       sodipodi:end="11.361077"
+       sodipodi:open="true"
+       transform="matrix(1.0948213,0,0,1.1694688,755.59851,-240.36992)" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bbb;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1260.2857,528.71933 L 1274.1857,504.21933 L 1287.9857,528.71933"
+       id="path35368"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bbb;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1308.2857,528.71933 L 1322.1857,504.21933 L 1335.9857,528.71933"
+       id="path35370"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bbb;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1356.2857,528.71933 L 1370.1857,504.21933 L 1383.9857,528.71933"
+       id="path35372"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>

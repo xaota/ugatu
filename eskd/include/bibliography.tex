@@ -1,0 +1,28 @@
+\usepackage[
+  style=numeric-comp,
+%   natbib=true,
+%   backend=biber
+% ]{biblatex}
+  % backend=biber,% движок
+  bibencoding=utf8,% кодировка bib файла
+  sorting=none,% настройка сортировки списка литературы
+  % style=gost-numeric,% стиль цитирования и библиографии (по ГОСТ)
+  % language=autobib,% получение языка из babel/polyglossia, default: autobib % если ставить autocite или auto, то цитаты в тексте с указанием страницы, получат указание страницы на языке оригинала
+  % autolang=other,% многоязычная библиография
+  % clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
+  defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
+  sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
+  doi=false,% Показывать или нет ссылки на DOI
+  isbn=false,% Показывать или нет ISBN, ISSN, ISRN
+]{biblatex}
+
+\newcounter{refs}
+\AtEveryBibitem{\stepcounter{refs}}
+
+\makeatletter
+  \AtEndDocument{%
+    \immediate\write\@mainaux{%
+      \string\gdef\string\totrefs{\number\value{refs}}%
+    }%
+  }
+\makeatother
