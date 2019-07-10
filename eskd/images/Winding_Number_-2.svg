@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="361"
+   height="361"
+   id="svg35374"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   version="1.0"
+   sodipodi:docbase="C:\Documents and Settings\Jim\Desktop\Wikipedia\Winding Number"
+   sodipodi:docname="Winding Number -2.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs35376" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="375"
+     inkscape:cy="175.28571"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="744"
+     inkscape:window-height="573"
+     inkscape:window-x="46"
+     inkscape:window-y="92" />
+  <metadata
+     id="metadata35379">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-493.78571,-597.57648)">
+    <path
+       id="path2322"
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#bbb;stroke-width:5.99992371;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 830.78571,777.57647 C 830.78571,694.68181 759.23542,621.57647 674.78571,621.57647 C 590.33598,621.57647 518.78571,694.68181 518.78571,777.57647 M 782.78571,777.57647 C 782.78571,721.25246 732.71882,669.57647 674.78571,669.57647 C 616.85257,669.57647 566.78571,721.25246 566.78571,777.57647 M 782.78571,777.57647 C 782.78571,853.73368 721.94058,921.57647 650.78571,921.57647 C 579.63083,921.57647 518.78571,853.73368 518.78571,777.57647 M 830.78571,777.57647 C 830.78571,847.25442 770.01143,909.57647 698.78571,909.57647 C 627.56003,909.57647 566.78571,847.25442 566.78571,777.57647"
+       sodipodi:nodetypes="csccsccsccsc" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path11083"
+       sodipodi:cx="418.96075"
+       sodipodi:cy="646.10364"
+       sodipodi:rx="10.960155"
+       sodipodi:ry="10.253048"
+       d="M 424.4471,637.22763 A 10.960155,10.253048 0 1 1 422.87812,636.52786"
+       sodipodi:start="5.2366483"
+       sodipodi:end="11.361077"
+       sodipodi:open="true"
+       transform="matrix(1.0948213,0,0,1.1694688,216.09856,21.987218)" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bbb;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 816.78571,766.57647 L 830.68571,791.07647 L 844.48571,766.57647"
+       id="path12058"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#bbb;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 768.78571,766.57647 L 782.68571,791.07647 L 796.48571,766.57647"
+       id="path15936"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>

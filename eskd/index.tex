@@ -1,0 +1,36 @@
+\documentclass[nocolumnsxix, nocolumnxxxi, nocolumnxxxii]{eskdtext}
+\include{include/preamble}
+\include{include/bibliography}
+
+\addbibresource{references.bib}          % файл со списком источников
+\include{about}                          % файл с информацией о работе
+
+\newif\ifeskd
+\eskdtrue                                % раскоментируйте, если требуется сборка готовой ВКР
+% \eskdfalse                             % раскоментируйте, если требуется сборка версии для антиплагиата
+
+\begin{document}
+  \ifeskd                                % сборка готовой ВКР
+    \include{abstract/russian}           % аннотация на русском
+    \include{abstract/english}           % аннотация на английском
+    \maketitle                           % неправильный титульник, нужен для рамок (из итоговой PDF страницу удалить)
+    \setcounter{page}{7}
+  \else                                  % сборка версии для антиплагиата
+    \ESKDstyle{empty}
+  \fi
+
+  \tableofcontents                       % содержание
+  \include{content/introduction}         % введение
+  \include{content/formulation}          % постановка задачи
+  \include{content/section-1}
+  \include{content/section-2}
+  % ... и другие разделы
+  \include{content/results}              % результаты
+  \include{content/conclusion}           % заключение
+  \printbibliography[heading = bibintoc] % печать списка источников
+  \ifeskd
+    \include{appendix/appendix-1}        % приложение 1
+    \include{appendix/appendix-2}        % приложение 2
+    % ... и другие приложения
+  \fi
+\end{document}

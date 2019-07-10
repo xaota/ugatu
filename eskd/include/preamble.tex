@@ -1,0 +1,27 @@
+\input{include/russian.tex}               % поддержка русского языка
+\DeclareTextSymbol{\No}{T2A}{"9D}         % символ "Номер"
+
+\usepackage{hyperref}                     % наличие ссылок в тексте, содержании и библиографии
+
+\usepackage{csvsimple}                    % вставка таблиц из файлов SVG
+\usepackage{booktabs}                     %
+\usepackage{makecell}
+\usepackage{multirow}                     % улучшенное форматирование таблиц
+
+\usepackage{eskdtotal}                    % счётчики количества страниц, рисунков и т.д.
+
+\ESKDsectStyle{section}{\Large\bfseries}  % оформление заголовков по ГОСТ / нормоконтролю
+
+\ESKDsectAlign{section}{Center}
+\ESKDsectSkip{section}{6pt}{6pt}
+
+\ESKDsectAlign{subsection}{Center}
+\ESKDsectSkip{subsection}{6pt}{6pt}
+
+\ESKDsectAlign{subsubsection}{Center}
+\ESKDsectSkip{subsubsection}{6pt}{6pt}
+
+\input{include/math.tex}                  % математические штуки
+\input{include/diagrams.tex}              % рисование диаграм и графиков
+\input{include/listings.tex}              % вставка исходников
+\usepackage{svg}                          % вставка рисунков из svg (необходим редактор inkscape в командной строке)

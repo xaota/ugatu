@@ -1,0 +1,24 @@
+\section{Ещё один раздел}
+
+Пример вставки диаграммы из файла.
+\input{images/reactions.tex}
+
+и табличка прямо тут
+
+\begin{table}[ht]
+  \caption{Расчет весомости параметров ПП}
+  \label{tab_weight}
+  \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline \multirow{2}{*}{Параметр $x_i$} & \multicolumn{4}{c|}{Параметр $x_j$} &
+          \multicolumn{2}{c|}{Первый шаг} & \multicolumn{2}{c|}{Второй шаг} \\
+      \cline{2-9} & $X_1$ & $X_2$ & $X_3$ & $X_4$ & $w_i$ &
+          ${K_\text{в}}_i$ & $w_i$ & ${K_\text{в}}_i$ \\
+      \hline $X_1$ & 1 & 1 & 1.5 & 1.5 & 5 & 0.31 & 19 & 0.32 \\
+      \hline $X_2$ & 1 & 1 & 1.5 & 1.5 & 5 & 0.31 & 19 & 0.32 \\
+      \hline $X_3$ & 0.5 & 0.5 & 1 & 0.5 & 2.5 & 0.16 & 9.25 & 0.16 \\
+      \hline $X_4$ & 0.5 & 0.5 & 1.5 & 1 & 3.5 & 0.22 & 12.25 & 0.20 \\
+      \hline \multicolumn{5}{|c|}{Итого:} & 16 & 1 & 59.5 & 1 \\
+      \hline
+      \end{tabular}
+  \end{table}
