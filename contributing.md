@@ -17,6 +17,7 @@
 ```shell
 $ git checkout --orphan %название_ветки%
 $ git rm -rf .
+$ git checkout master .gitignore
 ```
 
 Далее, всё зависит от того, существовала ли папка конкретного предмета в основной ветке `master`.
@@ -37,4 +38,9 @@ $ git push --set-upstream origin %название_ветки%
 
 *Примечание.*
 Ветку регулярно стоит "подливать" в ветку `master`.
-Лучше, если вы делаете для этого `pull request`.
+```shell
+$ git merge %название ветки% --allow-unrelated-histories
+```
+
+Однако, лучше, если вы делаете для этого `pull request`.
+
