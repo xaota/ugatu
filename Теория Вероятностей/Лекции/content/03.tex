@@ -1,0 +1,90 @@
+\section{Алгебра, $\sigma$-алгебра, монотонные классы}
+
+Дано: $\{A\}$ -- набор множеств, $A \in F$;\\
+$F^*$ -- $\sigma$-алгебра;\\
+$\sigma(\{A\}) \subseteq F^*$, где $\sigma(\{A\}) \min \sigma$-алгебра.
+
+\begin{example}
+  $ \forall \{A\}: A \in \Omega \Rightarrow \exists \min \sigma(\{A\})$.
+\end{example}
+
+\begin{proposition}
+  Если $a'_1,a'_2$ -- алгебры, то $a'_1\cap a'_2$ -- алгебра.
+\end{proposition}
+
+\begin{proof}
+  Возьмём алгебры $a'_1, a'_2$ и покажем, что их пересечение также является алгеброй.
+  \begin{displaymath}
+    A,B \in a'_1\cap a'_2 \Rightarrow \left\{
+    \begin{array}{l}
+      A \in a'_1, B\in a'_2\\
+      A \in a'_2, B\in a'_1
+    \end{array}
+    \right. \Rightarrow
+  \end{displaymath}
+
+  \begin{enumerate}
+    \item $(A\cap B) \in a'_1$ и $(A\cap B) \in a'_2$, и, т.к., $a'_1, a'_2$ -- алгебры, $\Rightarrow A\cap B \in a'_1\cap a'_2$
+    \item $(A\Delta B)\in a'_1$ и $(A\Delta B)\in a'_2 \Rightarrow (A\Delta B)\in a'_1\cap a'_2$
+  \end{enumerate}
+  Получили, что $a'_1\cap a'_2$ -- алгебра.
+\end{proof}
+
+\begin{proposition}
+  Если $a1,a2 - \sigma$-алгебры, то $a_1\cap a_2 - \sigma$-алгебра.
+\end{proposition}
+
+\begin{proof}
+  Теперь покажем, что пересечение $\sigma$-алгебр также $\sigma$-алгебра.
+  \begin{enumerate}
+    \item Т.к., $a_1, a_2$ являются алгебрами, $\Rightarrow a_1\cap a_2$ -- алгебра.
+    \item $\{C_k\}_{k=1}^\infty \subseteq (a_1 \cap a_2)\Rightarrow \{C_k\}_{k=1}^\infty \subseteq a_1$ и $\{C_k\}_{k=1}^\infty \subseteq a_2$. Т.к. $a_1$ и $a_2$ -- алгебры, $\bigcup\limits_{k=1}^\infty C_k \in a_1$ и $\bigcup\limits_{k=1}^\infty C_k \in a_2, \Rightarrow \bigcup\limits_{k=1}^\infty C_k \in (a_1\cap a_2)$.
+  \end{enumerate}
+  Таким образом, получили, что $a_1\cap a_2 - \sigma$-алгебра.
+\end{proof}
+
+\begin{corollary}
+  $A \in F, \{A\}$ -- набор событий\\
+  $\sigma(A) = \bigcap\limits_{F^*:\{A\}\in F}F^*, \sigma(\{A\})\subset F$\\
+  $\sigma(\{A\})$ -- под-$\sigma$-алгебра основной $\sigma$-алгебры $F$.\\
+  $\sigma(\{A\}) = \bigcap\limits_{F^*:\{A\}\in F^*} F^* = \bigcap\limits_{\{A\}\in F^*\subset F} F^*$
+\end{corollary}
+
+\begin{definition}
+  Набор множеств $M$ называется монотонным классом, если:
+  \begin{enumerate}
+    \item $A_1\subseteq A_2\subseteq ... \subseteq A_n \subseteq ..., A_k \in M \Rightarrow \bigcup\limits_k A_k \in M$.
+    \item $A_1 \supseteq A_2\supseteq ... \supseteq A_n \supseteq ..., A_k \in M \Rightarrow \bigcap\limits_k A_k \in M$.
+  \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+  Пусть $M_1,M_2$ -- монотонные классы, тогда $M_1 \cap M_2$ также монотонный класс.
+\end{proposition}
+
+\begin{proof} Покажем, что пересечение монотонных классов тоже монотонный класс.
+  \begin{enumerate}
+    \item $\forall C_1,...,C_n,...: C_n \subseteq C_{n+1} \Rightarrow C_n \in M_1\cap M_2 \Rightarrow C_n \in M_1$ и $C_n \in M_2$, тогда $\bigcup\limits_n C_n \in M_1$ и $\bigcup\limits_n C_n \in M_2$, получим $\bigcup\limits_n C_n \in C_1\cap C_2$.
+    \item $\forall С_1,...,C_n,...: C_n \supseteq C_{n+1} \Rightarrow C_n \in M_1\cap M_2 \Rightarrow C_n \in M_1$ и $C_n \in M_2 \Rightarrow \bigcap\limits_n C_n \in M_1$ и $\bigcap\limits_n C_n \in M_2 \Rightarrow \bigcap\limits_n C_n \in M_1\cap M_2$
+  \end{enumerate}
+  Следовательно, $M_1\cap M_2$ -- монотонный класс.
+\end{proof}
+
+\begin{example}
+  Пусть $a$ -- алгебра, $\mu (a)$ -- минимальный монотонный класс, содержащий данную алгебру, тогда $\mu (a) = \sigma (a)$.
+\end{example}
+
+\begin{theorem}[Каратиодори]
+  $(\Omega, a)$ -- измеримое множество, $a$ -- алгебра,\\
+  $P - \sigma$-аддитивная вероятность на $a$, тогда вероятность $P$ можно написать на $\sigma(a)$.
+\end{theorem}
+
+$P^*$ -- продолжение на $\sigma (a) \Leftrightarrow \forall A \in a \Rightarrow P^*(A) = P(A)$.
+
+\begin{enumerate}
+  \item Если $\{A\}$ -- набор множеств, то можно построить $\sigma (\{A\})$ -- $\min \sigma$-алгебру.
+  \item Если $a$ -- алгебра, то $\sigma(a) - \min \sigma$-алгебра, содержащая $a$.
+  \item $P(A)$ -- конечно-аддитивная на $a$.\\
+    Если теорема 1.5 выполняется, то $P(A)$ -- вероятность на $a$.
+  \item Если $P - \sigma$-аддитивная вероятность на $a$, то её по теореме Каратиодори можно продолжить на $\sigma(a)$.
+\end{enumerate}

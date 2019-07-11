@@ -1,0 +1,100 @@
+\section{Пространство $(R^T, \beta(R^T), P)$}
+Пусть $T = [0,1]\cup [0, +\infty)\cup R \cup [a, b]$ -- несчётное множество.\\
+Под $R^T$ подразумевается множество функций: $R^T = \{f(t), t\in T\}$.\\
+Пусть $B\in \beta (R^n), B = B_1\times ... \times B_n, B_k\in \beta (R)$.\\
+Возьмём произвольные точки $t_1, t_2,..., t_n \in T$.\\
+Рассмотрим множества $J_{t_{1},...,t_{n}}(B_n)=\{(f(t_1),...,f(t_n))\in B_n\}$
+
+Пусть $J_{t_{1},..., t_{n}}(B_{n})$ -- цилиндрические множества, где $B_{n}\in B(R^{n})$.\\
+Тогда справедливы условия согласованности:
+\begin{enumerate}
+\item $J_{t_{1}...t_{n}, s_{1}...s_{m}}(B\times R^{m}) = J_{t_{1}...t_{n}}(B), B\in R^{n}$
+\item Дана $t_{1}...t_{n}, а t_{n_{1}}...t_{n_{n}}$ - произвольная перестановка этих чисел, тогда:
+$$J_{t_{1}...t_{n}} (B_{1}\times B_{2}\times ... \times B_{n}) = J_{t_{n_{1}}...t_{n_{n}}} (B_{n_{1}} \times B_{n_{2}} \times ... \times B_{n_{n}})$$
+\end{enumerate}
+Обозначим через $a(R^T)$ - множество всех цилиндрических множеств. Покажем, что они образуют алгебру:
+\begin{enumerate}
+\item $R^{T} = J_{t_{1}}(R^{1}) \in a(R^{T})$
+\item $J_{t_{1}...t_{n}} (B_{n}) \in a(R^{T}) \Rightarrow J_{t_{1}...t_{n}} (\bar{B}_{n}) \in a(R^{T})$
+\item $J_{t_{1}...t_{n}} (B_{n}) \in a(R^{T}), J_{T_{1}...T_{n+k}} (C_{n+k}) \in a(R^{T}) $
+\end{enumerate}
+Рассмотрим $\bar{t}^{*} = \bar{t} \cup \bar{T}$. Имеем:
+\begin{itemize}
+\item В силу условий согласованности
+\begin{displaymath}
+\left\lbrace\begin{array}{l}
+J_{t_{1}...t_{n}} (B_{n}) = J_{t_{1}^{*}...t_{n+k}^{*}} (B_{n} \times R^{n+k})\\
+J_{T_{1}...T_{n+k}} (C_{n+k}) = J_{t_{1}^{*}...t_{2n+k}^{*}} (B_{n} \times R^{n})
+\end{array}\right.
+\end{displaymath}
+\item $J_{t_{1}^{*}...t_{2n+k}^{*}} (B_{n} \times R^{n+k})\cup J_{t_{1}^{*}...t_{2n+k}^{*}}(C_{n+k} \times R^{n}) = \{f(t^{*}): (f(t_{1}^{*}),..., f(t_{2n+k}^{*}))\in B_{n}\times R^{n+k} \} \cup \{f(t^{*}): (f(t_{1}^{*}),..., f(t_{2n+k}^{*}))\in C_{n+k}\times R^{n}\} = \{ f(t^{*}): (f(t_{1}^{*}),..., f(t_{2n+k}^{*}))\in B_{n}\times R^{n+k} \cup (C_{n+k}\times R^{n})\} = J_{t_{1}^{*}...t_{2n+k}^{*}}((B_{n}\times R^{n+k})\cup (C_{k+n}\times R^{n})) \in a(R^{T})$
+\end{itemize}
+Обозначим $B(R^T) = \sigma(a(R^T))$ -- минимальная $\sigma$-алгебра, содержащая все цилиндрические множества.\\
+Пусть $\bar{t} = \{t_1,..., t_{n},...\}, t_{n} \in T$, то есть имеем пространство $R^{\bar{t}}$ и $\sigma$-алгебру $\beta (R^{\bar{t}})$
+\begin{theorem}[О структуре $\sigma$-алгебры $\beta (R^{T})$]
+Справедливо равенство:
+$$\beta (R^{T}) = \bigcup\limits_{\bar{t} = \{t_{1}...t_{n}\}, t_{n}\in T} \beta (R^{\bar{t}})$$
+\end{theorem}
+\begin{proof}
+Покажем, что $\bar{B}$ является $\sigma$-алгеброй:
+\begin{enumerate}
+\item Пусть $\bigcup\limits_{\bar{t} = \{t_{1}...t_{n}\}} B(R^{\bar{t}}) = \bar{B}$.
+\begin{itemize}
+\item $R^{T}\in \overline{B}$, так как $R^{T} = J_{t_{1}}(R) = \{f(\overline{t}):f(t_{1})\in R\}$
+\item Пусть $A, B \in \bar{B} \Rightarrow \exists \bar{t}_1, \bar{t}_2: A = J_{t_{1}...t_{n}}(C), B = J_{s_{1}...s_{m}}(D)$, где $t_{1}...t_{n} \in \overline{t_{1}}, s_{1}...s_{m} \in \overline{t_{2}}$.\\
+Возьмем $\bar{t}_3 = \overline{t_{1}} \cup \overline{t_{2}} \Rightarrow t_{1}...t_{n}, s_{1}...s_{m} \in \overline{t_{3}} \Rightarrow A, B \in B^{\overline{t_{3}}} \Rightarrow A\cup B, A\cap B \in B^{\overline{t_{3}}} \subset \bar{B}$
+\item Пусть $A_1,..., A_n,... \in\bar{B} \Rightarrow \exists  \{\bar{t}_k\}: A_k = J_{t_{1}^{(k)}...t_{n}^{(k)}} (B) \in B(R^{\bar{t}_k})$\\
+$\bar{t} = \bigcup\limits_{n} t_{n}$ -- не более чем счетно.\\
+Тогда $\exists \sigma$-алгебра $\beta (R^{\bar{t}})$ и $A_{1},..., A_{n} \in B(R^{\bar{t}}) \Rightarrow \bigcup\limits_{n} A_{n}, \bigcap\limits_{n} A_{n}\in B(R^{\bar{t}}) \subset \bar{\beta}$
+\end{itemize}
+Таким образом, $\bar{\beta}$ - $\sigma$-алгебра, содержащая все цилиндрические множества.
+\begin{equation}
+\tag{$\star$}
+\beta(R^T) \subset \bar{\beta}
+\end{equation}
+\item Проверим обратное включение:
+\begin{equation}
+\tag{$\star \star$}
+\beta (R^T) = \bigcup\limits_{\bar{t}} \beta(R^{\bar{t}}) \Rightarrow
+\beta(R^{\bar{t}}) \subset B(R^T) \Rightarrow \bigcup\limits_{\bar{t}} \beta(R^{\bar{t}}) \subset \beta(R^T)
+\end{equation}
+Из $(\star)$ и $(\star \star) \Rightarrow B(R^{T}) = \bar{B}$.
+\end{enumerate}
+\end{proof}
+\begin{remark}
+$\beta (R^{T})$ - является "бедной" $\sigma$-алгеброй. Принадлежность какого-либо множества функций к этой $\sigma$-алгебре определяется поведением функций, на не более чем счетном наборе точек $\bar{t}$.
+\end{remark}
+\subsection{Построение вероятностной меры в $R^T$}
+Пусть есть мера $P$ на пространстве $(R^T, \beta (R^T))$.\\
+$P_{t_{1}...t_{n}}(B) = P(J_{t_{1}...t_{n}}(B))$ - вероятностная мера в $\beta (R^{n})$.\\
+Таким образом, задание меры $P$ в пространстве $\beta (R^{T})$ порождает семейство мер в $\beta (R^{n})$ - семейство конечномерных распределений $\{P_{t_{1}...t_{n}} (\cdot)\}$.\\
+Меры $\{P_{t_{1}...t_{n}}(\cdot)\}$ удовлетворяют условиям согласованности:
+\begin{enumerate}
+\item $P_{t_{1}...t_{n}, s_{1}...s_{n}} (B\times R^{n}) = P_{t_{1}...t_{n}}(B)$
+\item $P_{t_{1}...t_{n}}(B_{1}\times ... \times B_{n}) = P_{t_{n_{1}}...t_{n_{n}}}(B_{n_{1}}\times ... \times B_{n_{n}})$
+\end{enumerate}
+\begin{theorem}[Колмогорова о построении вероятностной меры в $\beta (R^T)$]
+Пусть $\{P_{t_{1}...t_{n}}(\cdot)\}$ -- семейство конечномерных распределений, удовлетворяющих условиям согласованности. Тогда $\exists !$  вероятностная мера P в пространстве $(R^{T}, \beta (R^{T})): P(J_{t_{1}...t_{n}}(B)) = P_{t_{1}...t_{n}}(B), B\in \beta (R^{n})$
+\end{theorem}
+\begin{proof}
+Пусть $D\in \beta(R^{T})$, тогда в силу теоремы о структуре $\sigma$-алгебры $\Rightarrow\exists\bar{t} = \{t_{1}...t_{n}...\}: D\in \beta(R^{\bar{t}})$.
+
+Рассмотрим конечномерное распределение $\{P_{t_{1}...t_{n}}(\cdot)\} :t_{1}...t_{n}\in \overline{t}$. Это согласованное семейство существует в силу теоремы Колмогорова о построении меры в $\beta(R^{\infty})$. Таким образом, можно построить $P_{\bar{t}}$, где $\bar{t}$ -- любое не более чем счетное множество.
+
+Положим по определению $P(D)\stackrel{def}{=}P_{\bar{t}}(D)$. $D\in \beta(R^{\bar{t}})$ и покажем его корректность.\\
+Предположим $D\in B^{\bar{t}_1}, D\in B^{\bar{t}_2}$, тогда покажем $P_{\bar{t}_1}(D) = P_{\bar{t}_2}(D)$, для $D\in \beta(R^{\bar{t}_3})$, где $\bar{t}_3 = \bar{t}_1 \cup \bar{t}_2$. Меры совпадают, если они совпадают на элементарных множествах, то есть на цилиндрических множествах.\\
+$D$ - цилиндрическое множество, в силу условия согласованности $\Rightarrow P_{\bar{t}_1}(D) = P_{\bar{t}_2}(D)$, то есть, определение корректно.
+\end{proof}
+Проверим, что P - вероятность:
+\begin{enumerate}
+\item $P(R^{T}) = P_{\bar{t}}(R^{\bar{t}}) = 1$
+\item Пусть $D_{1},..., D_{n},... \in \beta(R^{T})$, и $\forall i\ne j \Rightarrow D_{i}D_{j} = \emptyset$.\\
+Тогда $\exists \bar{t}_1,..., \bar{t}_k,... \in T: D_{k} \in \beta(R^{\bar{t}_k}), \bar{t} = \bigcup\limits_{n} \bar{t}_n$ -- не более чем счетно $\Rightarrow \exists \beta(R^{\bar{t}}): D_{1},..., D_{n},... \in \beta(R^{\bar{t}})$\\
+$P\left(\bigcup\limits_{n}D_{n}\right) = P_{\bar{t}}\left(\bigcup\limits_{n}D_{n}\right) = \sum\limits_{n}P_{\bar{t}}(D_{n}) = \sum\limits_{n}P(D_{n})$\\
+$D = J_{t_{1}...t_{n}}(B), B \in \beta(R^{n})$\\
+$\exists \bar{t} = \{t_{1},..., t_{n},...\}, D \in \beta(R^{\bar{t}})$\\
+$P(J_{t_{1}...t_{n}}(B)) = P_{\bar{t}}(J_{t_1...t_n}(B)) = P_{t_1 ... t_n}(B)$
+\end{enumerate}
+\begin{remark}
+Так как доказательство теоремы было проведено с помощью теоремы Колмогорова о построении меры в $\beta(R^{\infty})$, а она допускает обобщения: вместо $R$ берется $X$ -- полное сепарабельное метрическое пространство, и теорема Колмогорова справедлива для $X^{T}, \beta(X^{T})$, где $X^{T} = \{f(t), t\in T\}$
+\end{remark}

@@ -1,0 +1,14 @@
+\section{Геометричесоке распределение}
+Пусть есть $x$ последовательных независимых экспериментов, с вероятностью $p$ происхождения события $A$, вероятностью $q$ происхождения события $\bar{A}$ и причём серия прекращается при первом происхождении $A$.\\
+\begin{tabular}{c|ccc}
+$x$ & $1$ & $...$ & k\\
+\hline
+$p$ & $p$ & $...$ & $q^{k-1}p$
+\end{tabular}
+$$Ex = \sum\limits_{k=1}^\infty k q^{k-1}p=p\sum\limits_{k=1}^\infty k q^{k-1}=p\sum\limits_{k=1}^\infty \left(q^k\right)'=p\left(\sum\limits_{k=1}^\infty q^k\right)'=p\left(\frac{1}{1-q}\right)'=\frac{p}{(1-q)^2}=\frac{1}{p}$$
+$$E(x(x-1))=Ex^2-Ex \Rightarrow Ex^2=E(x(x-1))+Ex = E(x(x-1))+\frac{1}{p}$$
+$E(x(x-1))=\sum\limits_{k=1}^\infty k(k-1)q^{k-1}p=pq\sum\limits_{k=1}^\infty k(k-1)q^{k-2}=pq\sum\limits_{k=0}^\infty (q^k)'=pq\left(\sum\limits_{k=0}^\infty q^k\right)'=pq\left(\frac{1}{1-q}\right)' = \frac{2pq}{(1-q)^2}=\frac{2q}{p^2}$
+
+$Ex^2 = \frac{2q}{p^2}+\frac{1}{p}=\frac{2q+p}{p^2}=\frac{1-q}{p^2}$
+
+$D(x)=\frac{1-q}{p^2}-\frac{1}{p^2} = \frac{q}{p^2}$

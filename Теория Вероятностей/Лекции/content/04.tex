@@ -1,0 +1,68 @@
+\section{Примеры некоторых вероятностных пространств}
+
+$A$ -- открытое, либо замкнутое множество,\\
+$\Omega$ -- метрическое пространство с некоторой метрикой $\rho(x,y)$.
+
+\begin{definition}
+  $\min \sigma$-алгебра, содержащая все открытые и замкнутые множества, называется \textbf{Борелевской $\sigma$-алгеброй} $\beta(x)$.
+\end{definition}
+
+\subsection{Дискретное вероятностное пространство}
+
+$\Omega$ -- некоторое множество.\\
+$B_k\cap B_{k'}=\emptyset$, при $k\ne k'$.\\
+$F=\sigma(\{B_k\})$.\\
+$A\in F \Leftrightarrow A=\bigcup\limits_{k'} B_{k'}$\\
+$\Omega = \bigcap\limits_{k'} B_{k'}, B_k B_{k'}=\emptyset$, при $k\ne k'$.\\
+$A = B_{k_1}+…+B_{k_n} \Rightarrow P(A) = P(B_{k_1})+…+P(B_{k_n})$\\
+$P(B_k)=P_k, P_k \geqslant 0, \sum\limits_k P_k =1$.
+
+\subsection{Пространство $(R, \beta (R), P)$}
+
+$\rho(x,y) = |x-y|$ -- Евклидова метрика на $R$.\\
+Однако, удобно использовать такую метрику: $\rho(x,y)=\frac{|x-y|}{1+|x-y|}.$\\
+$\beta (R) - \min \sigma$-алгебра, содержащая все открытые и замкнутые множества $R$.\\
+Примеры множеств в $\beta (R): (a, b), [a, b], [a, b), (a, b]$.\\
+Мера на вещественной прямой задается через функцию распределения.\\
+$F(x)=P((-\infty, x])$ -- функция распределения меры $P$.
+
+\begin{enumerate}
+  \item $0\leqslant F(x)\leqslant 1$
+
+  \item $F(x)$ возрастает, т.е., $\forall x_1, x_2: x_1 \leq x_2 \Rightarrow F(x_1) \leqslant F(x_2)$.\\
+    Представим множество $(-\infty, x_2]$ как сумму несовместных множеств:\\
+    $(-\infty, x_2]=(-\infty, x_1]+(x_1, x_2]$, тогда $P((-\infty, x_2]) = P((-\infty, x_1])+P((x_1, x_2])$\\
+    $F(x_2)=F(x_1)+P((x_1, x_2])$\\
+    $F(x_2)\geqslant F(x_1)$
+
+  \item $P((x_1, x_2]) = F(x_2)-F(x_1)$
+
+  \item Непрерывность справа\\
+    $x_n\downarrow x\Rightarrow F(x_n)\downarrow F(x)$\\
+    $B_n = (-\infty, x_n]$\\
+    $F(x_n)=P((-\infty, x_n])=P(B_n)$\\
+    Если $x_n\downarrow x$, то
+    \begin{equation}
+      %\label{eqn:1}
+      \tag{$\star$}
+      \bigcup\limits_n B_n = B, B_n \supseteq B_{n+1}
+    \end{equation}
+
+    В силу непрерывности вероятностной меры
+    \begin{displaymath}
+      \lim\limits_{n\rightarrow\infty} P(B_n) = P(\bigcap\limits_n B_n)\stackrel{(\star)}{=}P((-\infty, x])
+    \end{displaymath}
+
+  \item $F(-\infty)=0, F(+\infty)=1$\\
+    $F(x_n)=P(B_n); B_n=(-\infty, x_n]$\\
+    $F(\infty)=\lim\limits_{n\rightarrow\infty} F(x_n)$.
+
+    Рассмотрим два случая:
+    \begin{enumerate}
+      \item $x_n\downarrow -\infty$;\\
+        $\bigcap\limits_n B_n=\emptyset, \lim\limits_{n\rightarrow\infty} F(x_n) = \lim\limits_{n\rightarrow\infty} P(B_n) = P(\emptyset) = 0$
+
+      \item $x_n\downarrow +\infty$;\\
+        $\bigcup\limits_n B_n=R, \lim\limits_{n\rightarrow\infty} F(x_n) = \lim\limits_{n\rightarrow\infty} P(B_n) = P(R) = 1$
+    \end{enumerate}
+\end{enumerate}

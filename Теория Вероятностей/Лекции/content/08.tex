@@ -1,0 +1,130 @@
+\section{Пространство $(R^\infty, \beta(R^\infty), P)$}
+$R^\infty = \{x_1,...,x_n,...\}$ -- пространство упорядоченных числовых последовательностей.\\
+Если $\bar{x}=\{x_1,...,x_n,...\}, \bar{y}=\{y_1,...,y_n,...\}$, можно ввести метрику:\\
+$$||\bar{x}-\bar{y}||=\sum\limits_k 2^{-k} \frac{|x_k - y_k|}{1+|x_k - y_k|}$$
+Так как $R^\infty$ -- метрическое пространство, то существует топология -- открытые и замкнутые множества, а значит, можно рассматривать $\min \sigma$-алгебру $\beta(R^\infty)$.
+\begin{definition}[Цилиндрические множества]
+Множества $A$, такие что:
+$$A=J_n (B), B \in \beta(R^n)$$
+будем называть \textbf{цилиндрическими множествами} с основанием $B$, если $$A=\{\bar{x}=(x_1,...,x_n,...):(x_1,...,x_n)\in B\}$$
+\end{definition}
+Для цилиндрических множеств справедливо условие согласованности:
+\begin{equation}
+J_n (B)=J_{n+k} (B\times R^k), B\in \beta (R)
+\end{equation}
+$$\{\bar{x}:(x_1,...,x_n,x_{n+1},...,x_{n+k})\}\in B_n \times R^k=\{\bar{x}:(x_1,...,x_n)\}\in B_n=J_n (B)$$
+\begin{remark}
+Условие согласованности позволяет переходить от цилиндрических множеств меньшей размерности переходить к цилиндрическим множествам с основанием большей размерности и наоборот.
+\end{remark}
+\begin{proposition}
+Множество всех цилиндрических множеств $a(R^\infty)$ является алгеброй.
+\end{proposition}
+\begin{proof}
+Покажем, что $a(R^\infty)$ -- алгебра.
+\begin{enumerate}
+\item $R^\infty = J_1 (R) \in a(R^\infty)$
+\item $A_1=J_{n_1}(B_1), A_2=J_{n_2}(B_2)$ -- цилиндрические множества.\\
+В силу согласованности цилиндрических множеств $\Rightarrow n_1 = n_2$\\
+$A_1\cup A_2 = \{\bar{x}\in R^\infty: (x_1,...,x_n)\in B_1\cup B_2\}=J_n (B_1\cup B_2), A=J_n(B)$
+\item $\bar{A}=R^\infty/\underbrace{J_n(B)}_{=A}=\{\bar{x}\in R^\infty:(x_1,...,x_n)\notin B\}$\\
+$\bar{A}=R^\infty/A = \{\bar{x}\in R:(x_1,...,x_n)\in \bar{B}\}\stackrel{def}{=}J_n(\bar{B})$
+\end{enumerate}
+Таким образом, множество всех цилинрических множеств является алгеброй.
+\end{proof}
+\begin{proposition}
+Можно взять $\min \sigma$-алгебру $\sigma(a(R^\infty))=\beta (R^\infty)$, содержащую все цилиндрические множества.
+\end{proposition}
+\begin{proof}
+Предположим, что есть некоторая вероятностная мера $P$ на $\beta (R^\infty)$. Тогда есть $P(J_n(B)) = P_n(B)$, где $B\in \beta(R^\infty)$, причём $P$ обладает свойством $\sigma$-аддитивности.\\
+Тогда можно построить меры в $R^\infty$.\\
+$P_n(B)=P(J_n(B))$, где $P_n$ -- вероятностная мера на $\beta (R^\infty)$:
+\begin{enumerate}
+\item $P_n(R^\infty) = P(J(R^\infty)) = P(R^\infty)=1$
+\item $C_1,C_2\in \beta (R^\infty), C_1 C_2 = \emptyset$\\
+$P_n(C_1\cup C_2)=P_n(J(D_1)\cup J(D_2))=P(C_1)\cup P(C_2), J(D_1)\cup J(D_2) = J(D_1\cup D_2)$\\
+$J(D_1\cup D_2)=\{\bar{x}\in R^\infty : (x_1,...,x_n)\in D_1 \cup D_2 \}=$\\
+$=\{\bar{x}\in R^\infty : (x_1,...,x_n)\in D_1\}\cup \{\bar{x}\in R^\infty : (x_1,...,x_n)\in D_2 \}=J(D_1)\cup J(D_2)$
+\item $D_1,...,D_n,...\in \beta (R^\infty), \forall i \ne j \Rightarrow D_i D_j = \emptyset$\\
+$P_n(\bigcup\limits_{k=1}^\infty D_k)=P(J_n(\bigcup\limits_k D_k))=P(\bigcup\limits_n J_k(D_k))=\sum\limits_k P(J_n(D_k))=\sum\limits_k P_n(D_k)$\\
+Так как $\{\bar{x}\in R^\infty:(x_1,...,x_n)\in \bigcup\limits_k D_k\}=\bigcup\limits_k\{\bar{x}\in R^\infty:(x_1,...,x_n)\in D_k\}$, то\\
+$J(\bigcup\limits_k D_n)=\bigcup\limits_k J(D_n)$
+\end{enumerate}
+\end{proof}
+\begin{proposition}
+$P_n(B)$ -- конечномерное распределение вероятностной меры.
+\end{proposition}
+\begin{proof}
+Из условия согласованности (1) следует
+$$P(J_{n+k}(B\times R^k))=P_{n+k}(B\times R^k)=P(J_n(B))=P_n(B)$$
+Т.е., получаем \textbf{условие согласованности} для конечномерных распределений:
+\begin{equation}
+P_{n+k}(B\times R^k)=P_n(B)
+\end{equation}
+\end{proof}
+\begin{theorem}[Колмогорова о построении меры в $\beta (R^\infty)$]
+$P_1,...,P_n,...$ -- последовательность вероятностных мер, определённых соответственно на пространствах $(R^n, \beta (R^n)), n=1,...$, удовлетворяющих условию согласованности (2).\\
+Тогда $\exists!$ вероятностная мера $P$, определённая на $\beta (R^\infty) : P(J_n(B))=P_n(B)\ne n, B \in \beta (R^n)$.
+\end{theorem}
+\begin{proof}
+Пусть $a(R^\infty)$ -- алгебра цилиндрических множеств. Тогда можно построить меру на алгебре и, а затем, по \textbf{теореме Каратиодори} и с помощью проверки $\sigma$-аддитивности перенести эту меру на пространство $\beta (R^\infty)$.\\
+Пусть $A=J_n(B)\in a(R^\infty)$, положим по определению $P(J_n(B))\stackrel{def}{=}P_n(B)$.\\
+Проверим, что данное определение корректно, то есть, не зависит от вида цилиндрических множеств.\\
+$J_n(B)=J_m(C)$\\
+Предположим, $n\leq m$, т.к., если $n=m\Rightarrow B=C$.\\
+$J_m(C)=J_m(B\times R^{m-n})$, т.е. $B\times R^{m-n}=C$\\
+$P(J_n(B))=P(J_m(B\times R^{m-n}))\Rightarrow P_n(B) = P_m(B\times R^{m-n})\Rightarrow P_n(B)=P_m(C)$.\\
+Таким образом, $P(J_n(B))=P(J_m(C))\Rightarrow$ определение корректно.\\
+Проверим кончную аддитивность меры $P$:\\
+$P(R^\infty)=P(J_1(R))=P_1(R)=1$\\
+$A_1, A_2\in a(R^\infty): A_1 A_2 =\emptyset, A_1=J_n(B), A_2=J_m(C)$\\
+В силу условия согласованности (1) цилиндрических множеств, имеем $n=m$.\\
+Пусть $N\leq m$, тогда $A_1=J_m(\beta (R^{m-n}))$
+$$P(A_1+A_2)=P(J_m(B\times R^{m-n})+J_m(C))$$
+Заметим, что $A_1 A_2 = \emptyset, (B\times R^{m-n})C=\emptyset$, тогда
+$$P(A_1+A_2)=P(J_m((B\times R^{m-n})+C))$$
+Перейдём к конечномерным распределениям
+$$P(A_1+A_2)=P_m((B\times R^{m-n})+C)=P_m(B\times R^{m-n})+P_m(C)$$
+Откуда в итоге получаем
+$$P(A_1+A_2)=P(J_m(B\times R^{m-n}))+P_m(J_m(C))=P(A_1)+P(A_2)$$\
+Таким образом, $P$ -- конечно-аддитивная вероятность на $a(R^\infty)$.\\
+Остаётся проверить, что $P - \sigma$-аддитивная вероятностная мера на $a(R^\infty)$, для этого достаточно проверить непрерывность в нуле.\\
+Пусть $\{A_n\}\subset a(R^\infty) : A_n \supseteq A_{n+1}, \bigcap\limits_n A_n = \emptyset$. Верно ли, что $\lim\limits_{n\rightarrow\infty}P(A_n)=0$?\\
+\textcircled{$\times$} % Знак доказательства от противного $\otimes$
+Пусть $\exists \delta \geq 0: \lim\limits_{n\rightarrow\infty}P(A_n)=\delta, A_n=J_n(B_n), B_n\in \beta (R^n)$\\
+Всегда можно считать, что $A_n$ -- цилиндрическое множество размерности $n$, где $n$ неограниченно растёт. Если же размерности ограничены, то всё происходит в конечномерном пространстве, где существует $\sigma$-аддитивность, следующая из существования $\sigma$-аддитивности в мерах $P_n$.\\
+Воспользуемся свойством регулярности вероятностных мер на $R^n$:\\
+Так как $B\subset \beta (R^n)$, то $\forall \varepsilon \geq 0 \exists K_\varepsilon \subseteq B : P_n(B|K_\varepsilon) \leq \varepsilon$.\\
+$B_n$ -- основание множества $A$, тогда можно взять компакт $K_n$ такой что:
+$$K_n \subseteq B_n : P_n(B_n|K_n) < \frac{\delta}{2^{n+1}}$$
+Рассмотрим $C_n=J_n(K_n)$, получим:\\
+$A_n = J_n(B_n)\supseteq J_n (K_n) = C_n$, т.е, $C_n \subseteq A_n$\\
+Предположим, что $D_n = \bigcap\limits_{k=1}^n C_k$, тогда $D_n \supseteq D_{n+1}, D_n \subseteq A_n \Rightarrow D_n \in a(R^\infty)$, т.е., $D_n$ является цилиндрическим множеством.
+$$P(A_n|D_n) = P\left(A_n|\bigcap\limits_{k=1}^n C_k\right) \leqslant P\left(\bigcup\limits_{k=1}^n (A_n|C_k)\right) \leqslant \sum\limits_{k=1}^n P(A_k | C_k)$$
+Это верно, потому что $A_k\supseteq A_n$ и $k\leqslant n$. Продолжим,
+$$\sum\limits_{k=1}^n P(A_k | C_k)=\sum\limits_{k=1}^n \left(P(A_k)-P(C_k)\right)=\sum\limits_{k=1}^n \left(P_k(B_k)-P_k(K_k)\right)$$
+Это верно, потому что $A_k = J_k(B_k)$ и $C_k= J_k(K_k)$. В итоге имеем,
+$$P(A_n|D_n) = \sum\limits_{k=1}^n \left(P_k(B_k)-P_k(K_k)\right) = \sum\limits_{k=1}^n P_k \left(B_k/ K_k\right)\leqslant \sum\limits_{k=1}^n \frac{\delta}{2^{k+1}} < \frac{\delta}{2}$$
+Получили $P(A_n/D_n) < \frac{\delta}{2} \Rightarrow P(A_n)-P(D_n) < \frac{\delta}{2}$, и
+$$\delta = P(A_m) < \frac{\delta}{2}+P(D_n), P(D_n) > \frac{\delta}{2}, \bigcap\limits_n D_n = \emptyset$$
+Покажем, что $\bigcap\limits_n D_n \ne \emptyset$ и получим противоречие.\\
+$D_n$ -- цилиндрическое множество, $\forall n \Rightarrow \bar{x}^{(n)}\in D_n$, а именно
+\begin{displaymath}
+\left. \begin{array}{l}
+\bar{x}^{(1)}  = (x_1^{(1)},x_2^{(1)},...,x_n^{(1)},...)\\
+\bar{x}^{(2)}  = (x_1^{(2)},x_2^{(2)},...,x_n^{(2)},...)\\
+...\\
+\bar{x}^{(m)}  = (x_1^{(m)},x_2^{(m)},...,x_n^{(m)},...)\\
+\end{array} \right.
+\end{displaymath}
+Согласно построению множества $D_n=  J(K_1)= C_1$, получим $\{x_1^{(m)}\subset K_1 \subset R\}$ -- компакт, значит, эта последовательность имеет предел, т.е., $\exists \{m_l^{(1)}\} :$\\
+При $l\rightarrow \infty\Rightarrow x_1^{m_l^{(1)}}\rightarrow y_1 \in K_1$.\\
+Рассмотрим $\{\bar{x}^{(m_l)}\}$, имеем $\{x_1^{(m_l^{(2)})}, x_2^{(m_l^{(2)})}\}\rightarrow \{y_1, y_2\}$\\
+Продолжим этот процесс, в результате получаем $\bar{y}=(y_1, y_2,...,y_m,...), \bar{y} \in D_k, \forall k$.\\
+То есть, $\bar{y}\in \bigcap\limits_k D_k \ne \emptyset$, т.е. $\lim\limits_{n\rightarrow\infty}P(A_n)=\delta$ -- неверное предположение.\\
+Следовательно, $\lim\limits_{n\rightarrow\infty}P(A_n)=0\Rightarrow P - \sigma$-аддитивна на $a(R^\infty)$.\\
+В силу \textbf{Теоремы Каратиодори}, $P$ продолжаем на $\sigma (a (R^\infty))=\beta (R^\infty)$.
+\end{proof}
+\begin{remark}
+При доказательстве теоремы используется тот факт, что к  любому множеству $B \in \beta (R^n)$ изнутри можно подобраться с помощью компактов $K_\varepsilon: P(B|K_\varepsilon) < \varepsilon$. Это верно для любого $X$ -- полного сепарабельного метрического пространства.\\
+Таким образом, теорема верна для $(X^\infty, \beta(X^\infty))$.
+\end{remark}

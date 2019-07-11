@@ -1,0 +1,35 @@
+\section{Теорема о разных видах сходимости случайных величин, лемма Бореля-Кантелли}
+\begin{lemma}[Бореля-Кантелли]
+$A_{1},..., A_{n},..$\\
+$A = \varlimsup\limits_{n}A_{k} = \bigcap\limits_{n}\bigcup\limits_{k\geqslant n} A_{k} = \{A_{n} $ -- бесконечно часто $\}$.
+\begin{enumerate}
+\item $\sum\limits_{k}p(A_{k})$ сходится $\Rightarrow p(A)=0$
+\item $A_{1},...,A_{n},...$ - незав., ряд расходится. $\Rightarrow p(A)=1$
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\begin{enumerate}
+\item $p(A) = p(\bigcap\limits_{n}\bigcup\limits_{k\geqslant n}A_{k})$ ;  $B_{n}=\bigcup\limits_{k\geqslant n}A_{k} \Rightarrow$ по теореме об условиях равносильной $\sigma$-аддитивности $\Rightarrow$\\
+$p(A)=\lim\limits_{n}p(B_{n}) \leqslant \lim\limits_{n}\sum\limits_{k\geqslant n} p(A_{k}) \rightarrow 0$ так как ряд сходится.
+\item $p(A) = \lim\limits_{n}p(B_{n}) = \lim\limits_{n}p(\bigcup\limits_{k\geqslant n}A_{k}) = \lim\limits_{n}(1-p(\bigcap\limits_{k\geqslant n}\bar{A}_{k})) = |A_{1},...,A_{n}$ - незав. $\Rightarrow $ вер. произв = произв. вероятностей $|=\lim\limits_{n}(1-\prod\limits_{k\geqslant n} p(\bar{A}_{k})) = \lim\limits_{n}(1-\prod\limits_{k\geqslant n}(1-p(A_{k}))=\lim\limits_{n}(1-\exp(\ln \prod\limits_{k \geqslant n}(1-p(A_{k}))))=
+\lvert
+\ln \prod\limits_{k\geqslant n}(1-p(A_{k}))=\sum\limits_{k\geqslant n}\ln(1-p(A_{k})) \leqslant
+|\ln(1-x)\leqslant -x$
+при $0\leqslant x \leqslant 1| \leqslant -\sum\limits_{k\geqslant\ n}p(A_{k}) = -\infty \rvert$  $=\lim\limits_{n}(1-\exp(-\infty)) = 1$
+\end{enumerate}
+\end{proof}
+\begin{corollary}
+$\epsilon_{n} \downarrow 0, \sum\limits_{k}p(|\xi_{k}-\xi|\geqslant\epsilon_{k})$ сходится $\Rightarrow \xi_{k}\rightarrow \xi$ п.н.
+\end{corollary}
+\begin{proof}
+$A_{k} = \{|\xi_{k}-\xi|\geqslant \epsilon_{k} \} \Rightarrow $ Лемма Бореля-Кантелли $\Rightarrow A=\bigcap\limits_{n=1}^{\infty}\bigcup\limits_{k\geqslant n}A_{k} \Rightarrow p(A)=0 \Rightarrow $ при п.в. \\
+$\omega \exists N(\omega): \forall n\geqslant N(\omega) |\xi_{n}(\omega)-\xi(\omega)|\leqslant \epsilon_{n} \Rightarrow $ т.к. $\epsilon_{n} \downarrow 0 \Rightarrow \xi_{n}\rightarrow \xi$ при п.в. $\omega$.
+\end{proof}
+\begin{example}
+$\xi_{n}\xrightarrow{p} \xi$ (по вероятности). Используется чтобы показать, что из $\xi_{n}$ можно выделить подпоследовательность $\xi_{nk}\rightarrow \xi$ п.н
+\end{example}
+\begin{proof}
+$\xi_{n}\xrightarrow{p} \xi \Rightarrow p(|\xi_{n}-\xi|>\sigma)\rightarrow \forall \sigma$\\
+$A_{n_{m}}=\{\omega:|\xi_{n}-\xi|>\frac{\sigma}{m}\} \Rightarrow p(A_{n_{m}})\rightarrow 0, \frac{\sigma}{m}=\epsilon_{m}\downarrow 0$\\
+Возьмем $A_{n_{1}}=A_{n}:p(A_{n})<1$ ; $A_{n_{2}}=A_{n}:p(A_{n})<\frac{1}{2},...,A_{n_{k}}=A_{n}:p(A_{n})<2^{\frac{1}{k}}\Rightarrow \sum\limits p(A_{n_{k}}) = \sum\limits_{k=0}^{\infty} \frac{1}{2^{k}} = 2 \Rightarrow $ Сл. $\Rightarrow \xi_{n_{k}}\rightarrow \xi$ п.н.
+\end{proof}

@@ -1,0 +1,42 @@
+\section{Пространства $(R, \beta (R))$, функции распределения, плотности распределения, разложение Лебега}
+$(R, \beta(R), P)$\\
+$\rho(x, y) = |x-y|$ -  метрика Евклида. $\rho'(x, y) = \frac{|x-y|}{1+|x-y|}$ - ограниченная метрика.
+
+$\beta (R)$ - минимальная $\sigma$-алгебра, содержащая все ограниченные и замкнутые множества на $R$ ( Борелевская $\sigma$-алгебра, $\beta (R) = \sigma ([a, b])$ ).\\
+
+Функция $y = F(x)$ называется \textbf{Функцией Распределения}, если:
+\begin{enumerate}
+ \item $0 \leqslant F(x) \leqslant 1, F(-\infty) = 0, F(+\infty) = 1$
+ \item $F(x)$ - непрерывна справа
+ \item $F(x)$ - не убывает
+\end{enumerate}
+
+Существует взаимо однозначное соответствие между вероятностными мерами на $\beta (R)$ и Функцией Распределения: $p$ на $\beta (R), A = (-\infty, x] \Rightarrow F(x) = p(A) = p((-\infty, x])$
+\begin{enumerate}
+ \item $0 \leqslant p(A) \leqslant 1 \Rightarrow 0 \leqslant F(x) \leqslant 1$\\
+  $F(-\infty) = \lim\limits_{x \rightarrow -\infty} F(x) = \lim\limits_{n \rightarrow -\infty} F(n) = \lim\limits_{n \rightarrow -\infty} p(\overbrace{(-\infty, n]}^{B_n}) = p(\emptyset) = 0$, где $\bigcap\limits_n B_n = \emptyset$
+ \item $x_n \downarrow x \Rightarrow$ верно ли что $F(x_n) \downarrow F(x)$?\\
+  $A_n = (-\infty, x_n]; A = (-\infty, x]; A_n \downarrow, \bigcap\limits_{n} A_n = A$\\
+  Поскольку $p$ непрерывна снизу, то $p(A) = \lim\limits_{n} p(A_n) \Rightarrow \lim\limits_{x_n \rightarrow x+} F(x_n) = F(x)$
+ \item Сравнение $F(x_1)$ и $F(x_2)$, при $x_1 \leq x_2$\\
+  $F(x_2) = p((-\infty, x_2]) = p((-\infty, x_1]) + \underbrace{p((x_1, x_2])}_{\geqslant 0} \geqslant F(x_1)$
+\end{enumerate}
+\begin{definition}
+ $p((a, b]) = F(b) - F(a)$ - мера Лебега-Стилтьеса.
+\end{definition}
+\begin{theorem}[Радона-Никодима, частный случай]
+ Если $p$ - вероятностная мера на $\beta (R)$, то следующие утверждения равносильны:
+ \begin{enumerate}
+  \item $p$ - абсолютно непрерывна относительно меры Лебега $\mu: (p << \mu)$.
+  \item $\exists p(y)$ - неотрицательная, измеримая функция относительно $\beta (R)$, то есть, $p^{-1}(B) = \lbrace y: p(y) \in B \rbrace \in \beta (R)$ при $B \in \beta (R)$.
+ \end{enumerate}
+\end{theorem}
+
+\paragraph{Виды Функций Распределения}
+\begin{enumerate}
+ \item \textbf{Абсолютно непрерывная} - Можно восстановить функцию по производной\\
+  $F'(x) = p(x); F(x) = \int\limits_{-\infty}^{x} p(y)dy$, где $p(y)$ - плотность распределения.\\
+  $\forall B \in \beta (R) \Rightarrow p(B) = \int\limits_B p(y)dy$
+\end{enumerate}
+
+% TODO: тут еще писать и писать)

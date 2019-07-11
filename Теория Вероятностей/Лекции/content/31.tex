@@ -1,0 +1,25 @@
+\section{Многомерное нормальное распределение}
+\begin{enumerate}
+ \item $\bar{\xi}=(\xi_1,...,\xi_n), \xi_k \sim N(a_k, \sigma_k)$ и является независимыми случайными величинами.\\
+ $B_{kl}=cov(\xi_k, \xi_l); B = \{B_{kl}\}, k,l = \overline{1...n}$\\
+ $B = \begin{pmatrix}\sigma_{1}^2 &  & 0 \\ & \ddots & \\ 0 &  & \sigma_n^2\end{pmatrix}$, т.к. независимые случайные величины.\\
+$\bar{a}=(a_1,...,a_n)$ -- вектор математических ожиданий.\\
+Плотность распределения:
+$$\xi_1, ..., \xi_n : p_{\xi_1,...,\xi_n}(x_1,...,x_n)=\prod\limits_{k=1}^{n}P_{\xi k}(x_n)=\frac{1}{(2\pi)^{n/2}\prod\limits_{k=1}^n \sigma_k}e^{-\frac{1}{2}\sum\limits_{k=1}^n\left(\frac{x_k-a_k}{\sigma_k}\right)^2}$$
+Следовательно, $\sqrt{det A} = \prod\limits_{k=1}^{n} \frac{1}{\sigma_k}$, откуда при $A=\{ a_{ij}\}_{i,j=1}^n$:
+\begin{equation}
+\tag{$\star$}
+p_{\xi_1,...,\xi_n}-(2\pi)^{-n/2}\sqrt{det A} \cdot e^{-\frac{1}{2}\sum\limits_{i,j=1}^n a_{ij}(x_i - a_i)(x_j - a_j)}
+\end{equation}
+$$\sum\limits_{i,j=1}^n a_{i,j}(x_i - a_i)(x_j - a_j)=\left|\begin{matrix}a_{ij}=0, & i\ne j\\a_{ij}=\frac{1}{\sigma^2}, & i = j\end{matrix}\right|$$
+\begin{multline*}
+\varphi_{\xi_1,...,\xi_k}(t_1,...t_n)=Ee^{it_1\xi_1+...+it_n\xi_n}=E\left(\prod\limits_{k=1}^n e^{it_k\xi_k}\right)=\\=\prod\limits_{k=1}^n E(e^it_k\xi_k)=\prod\limits_{k=1}^n e^{it_ka_k-\frac{t_k^2 \sigma_k^2}{2}} = \exp\left((\sum\limits_{k=1}^n i t_k a_k - \sum\limits_{k=1}^n \frac{t_k^2 \sigma_k^2}{2}\right)=\\=\exp\left(i\bar{t}\bar{a}-\frac{1}{2}\sum\limits_{i,j=1}^n B_{ij} t_i t_j\right)
+\end{multline*}
+Таким образом, для задания многомерного нормального распределения достаточно значть только $a$ и $B$.
+\item $\xi_1,...,\xi_n$ -- случайные величины. \\
+Если $det B \ne 0\Rightarrow\exists A = B^{-1}$ и следует $\star$.\\
+Если $det B =0\Rightarrow $ многомерное нормальное распределение определяется только через характеристическую функцию
+$$\phi_{\xi_1,...,\xi_n}(t_1,...,t_n)=exp\left(\sum\limits_{k=1}^n i t_k a_k -\frac{1}{2}\sum\limits_{i,j=1}^n B_{i,j}t_i t_j\right)$$
+Необходимо, чтобы $B\geq 0$, т.е. $\sum\limits_{i,j=1}^n B_{i,j}x_i x_j \geq 0$
+$$\sum\limits_{i,j}^n B_{i,j}x_i x_j = E\sum_{i,j=1}^n(\xi_i-a_i)x_i-(\xi_j-a_j)x_j=E\left(\sum\limits_{k=1}^n(\xi_k-a_k)x_k\right)^2 \geq 0$$
+\end{enumerate}
