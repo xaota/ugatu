@@ -1,0 +1,100 @@
+\section{Аксиоматика Колмогорова: алгебры и меры}
+$\{\Omega, F, P\}$ -- Вероятностное пространство, где\\
+$\Omega$ -- множество произвольной природы,\\
+$F - \sigma$-алгебра событий,\\
+$P$ -- Вероятность.
+\begin{definition}[$\sigma$-алгебра]
+ $F - \sigma$-алгебра, если:
+ \begin{enumerate}
+  \item $F$ - алгебра
+   \begin{itemize}
+    \item $\Omega \in F$
+    \item $\forall A,B \in F \Rightarrow A+B \in F, AB \in F$
+    \item $\forall A \in F \Rightarrow \exists ! \bar{A} \in F$
+   \end{itemize}
+  \item $A_n \in F \Rightarrow \bigcup\limits_{n=1}^{+\infty} A_n, \bigcap\limits_{n=1}^{+\infty} A_n \in F$
+ \end{enumerate}
+\end{definition}
+\begin{definition}[Конечно-аддитивная вероятностная мера]
+ $P$ -- конечно-аддитивная вероятностная мера, если $\forall A,B \in F$ выполнено:
+ \begin{enumerate}
+  \item $P(\Omega) = 1, P(A) \geq 0$
+  \item $A\dot B \ne \emptyset$
+  \item $P(A+B) = P(A) + P(B)$
+ \end{enumerate}
+\end{definition}
+\begin{definition}[Вероятностная мера]
+ $P$ -- вероятностная мера, если
+ \begin{enumerate}
+  \item $P$ -- конечно-аддитивная вероятность
+  \item $\forall A_1,...,A_n \in F \Rightarrow A_i A_j = \emptyset, i \ne j$
+ \end{enumerate}
+\end{definition}
+\begin{definition}[$\sigma$-аддитивность]
+$P(\sum\limits_i A_i) = \sum\limits_i P(A_i)$
+\end{definition}
+\begin{definition}[Несовместные события]
+ События $A$ и $B$ несовместны, если $AB = \emptyset$, т.е. события $A$ и $B$ одновременно произойти не могут, и $P(A+B) = P(A)+P(B)$.
+\end{definition}
+\begin{corollary}
+ $A, B \in F \Rightarrow P(A+B) \in P(A)+P(B)-P(AB)$
+\end{corollary}
+\begin{proof}
+ Так как $A+B=A|B+AB+B|A$,\\
+ $P(A+B) = P(A|B)+P(AB)+P(B|A)$, добавим и вычтем $P(AB)$\\
+ $P(A+B) = P(A|B)+P(AB)+P(B|A)+P(AB)-P(AB)$\\
+ Так как $(A|B) \cup AB=A$ и $(B|A) \cup BA=B$, имеем\\
+ $P(A|B+AB)+P(B|A+BA)-P(AB)=P(A)+P(B)-P(AB)$
+\end{proof}
+\begin{corollary}
+ $P(\bar{A}) = 1 - P(A)$
+\end{corollary}
+\begin{proof}
+\begin{displaymath}
+\left. \begin{array}{r}
+A \bar{A} = \emptyset\\
+A+\bar{A} = \Omega
+\end{array} \right\} \Rightarrow P(\Omega) = 1 = P(A)+P(\bar{A}) \Rightarrow P(\bar{A}) = 1 - P(A)
+\end{displaymath}
+\end{proof}
+\begin{corollary}
+ $A, B \in F \Rightarrow P(A+B) \leq P(A) + P(B)$
+\end{corollary}
+\begin{proof}
+$$P(A+B)  = P(A)+P(B) - P(AB) \leqslant P(A)+P(B)$$
+\end{proof}
+\begin{corollary}
+ $P\left(\bigcup\limits_n A_n\right) = \sum\limits_n P\left(A_n\right)$
+\end{corollary}
+Пусть $a$ - алгебра, $F - \sigma$-алгебра, и $P$ - конечно-аддитивная вероятность.
+\begin{theorem}
+ Пусть $P$ -- конечно-аддитивная вероятность на $a$, тогда следующие условия равносильны:
+ \begin{enumerate}
+  \item $P - \sigma$-аддитивная
+  $$\forall i,j\Rightarrow i\ne j, A_{i}A_{j}=\emptyset \Leftrightarrow A_1,...,A_n \in a, P\big (\sum\limits_i A_i\big ) = \sum\limits_j P(A_j)$$
+ \item $P$ - непрерывна снизу
+ $$A_n \in a, A_n \subseteq A_{n+1} \Rightarrow \lim\limits_{n\rightarrow\infty} P\left(A_n\right) = P\left(\bigcup\limits_n A_n\right)$$
+ \item $P$ - непрерывна сверху
+ $$A_n \in a, A_n \supseteq A_{n+1} \Rightarrow \lim\limits_{n\rightarrow\infty} P\left(A_n\right) = P\left(\bigcap\limits_n A_n\right)$$
+ \item $P$ - непрерывна в нуле
+ $$A_n \in a, A_n \subseteq A_{n+1}, \bigcap\limits_n A_n = \emptyset \Rightarrow \lim\limits_{n\rightarrow\infty} P\left(A_n\right) = 0$$
+ \end{enumerate}
+\end{theorem}
+\begin{proof}
+ Покажем, что $1 \Rightarrow 2 \Leftrightarrow 3 \Rightarrow 4 \Rightarrow 1$:
+ \paragraph{$1 \Rightarrow 2$:} $A_n, A_n \subseteq A_{n+1}$
+ $$P\left(\bigcup\limits_n A_n\right) = A_1+(A_2|A_1)+...+(A_n+1|A_n)+... = \lim_{N\rightarrow\infty}\left[P(A_1)+\sum_{k=1}^N P(A_{k+1}|A_k)\right] = $$
+ имеем сумму вероятностей несовместных событий
+ $$ = \lim_{N\rightarrow\infty}\left[P(A_1)+(P(A_2)-P(A_1))+...+(P(A_{N+1}) - P(A_N))\right] = \lim_{N\rightarrow\infty}P\left(A_{N+1}\right)$$
+ \paragraph{$2 \Rightarrow 3$:} $P\left(\bigcap\limits_n A_n\right)=1-P\left(\bigcap\limits_n \bar{A_n}\right), \bar{A_n} \subseteq \bar{A_{n+1}} \Rightarrow A_n \supseteq A_{n+1}$. В силу 2 имеем:
+ $$P\left(\bigcap\limits_n A_n\right)=1-P\left(\bigcap\limits_n \bar{A_n}\right) = 1 - \lim\limits_n\left(P(\bar{A_n})\right) = \lim\limits_n\left(1-P(\bar{A_n})\right) = \lim\limits_n\left(P(A_n)\right)$$
+ \paragraph{$3 \Rightarrow 2$:} $P\left(\bigcup\limits_n A_n\right)=1-P\left(\bigcup\limits_n \bar{A_n}\right) = 1 - P\left(\bigcap\limits_n A_n\right)$
+ $$A_n \supseteq A_{n+1}, \bigcap\limits_n\bar{A_n}\in a\Rightarrow A_n \subseteq A_{n+1}$$
+ В силу 3 имеем: $P\left(\bigcup\limits_n A_n\right)=1-\lim\limits_n P(\bar{A_n}) = \lim\limits_n\left(1-P(\bar{A_n})\right) = \lim_n P(A_n)$
+ \paragraph{$3 \Rightarrow 4$:} $\bigcap\limits_n A_n = \emptyset \Rightarrow \lim\limits_n P(A_n) = P(\emptyset) = 0$
+ \paragraph{$4 \Rightarrow 1$:} В силу конечной аддитивности
+ $$P\left(\bigcup\limits_n A_n\right) = P\left(A_1+...+A_N+\bigcup\limits_{k\geqslant N}A_k\right) = P(A_1)+...+P(A_N)+P\left(\bigcup\limits_{k\geqslant N}A_k\right)$$
+ $B_N = \bigcup\limits_{k\geqslant N}A_k, B_N \supseteq B_{N+1}$. Т.к. $A_1,...,A_n$ -- несовместны, $\bigcap\limits_N B_N = \bigcap\limits_N\bigcup\limits_{k\geqslant N}A_k=\emptyset$\\
+ Поэтому, $P\left(\bigcup\limits_n A_n\right) = \lim\limits_{N\rightarrow\infty}\left[P(A_1)+...+P(A_N)+P(B_N)\right] = $\\
+ $$= \lim\limits_{N\rightarrow\infty}\sum\limits_{k=1}^N P(A_k)+\underbrace{\lim\limits_{N\rightarrow\infty} P(B_N)}_{\text{= 0 (в случае 4)}} = \sum\limits_{k=1}^\infty P(A_k).$$
+\end{proof}

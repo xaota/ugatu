@@ -1,0 +1,29 @@
+\section{Показательное (экспоненциальное) распределение}
+В простейшем потоке случайное время $T=T(\omega)$ между соседними заявками имеет показательное распределение $P(T(\omega) > t) = e^{-\lambda t}$.\\
+Плотность $p(t)=\left\{\begin{matrix}
+\lambda e^{-\lambda t}, & t > 0,\\
+0, & t \leq 0.
+\end{matrix}\right.$
+\begin{multline*}
+ET = \int\limits_0^\infty t\lambda e^{-\lambda t} dt = \left| \begin{matrix}
+s = \lambda t \\
+ds = \lambda dt
+\end{matrix} \right| = \frac{1}{\lambda}\int\limits_0^\infty s e^{-s}ds = \frac{1}{\lambda}\lim\limits_{N\rightarrow\infty}\int\limits_0^N s e^{-s}ds=\\
+=\left|\begin{matrix}
+u=s & dv = e^{-s} ds\\
+du = ds & v = -e^{-s}
+\end{matrix}\right| = \frac{1}{\lambda} \lim\limits_{N\rightarrow\infty}\left(-s e^{-s}\bigg|_0^N +\int\limits_0^N e^{-s} ds\right)=\\
+=\frac{1}{\lambda}\lim\limits_{N\rightarrow\infty}\left(-N\cdot e^{-N}-e^{-s}\bigg|_0^N\right)=\frac{1}{\lambda}\lim\limits_{N\rightarrow\infty}(-N e^{-N}+e^{-N}+1) = -\frac{1}{\lambda}\lim\limits_{N\rightarrow\infty}\frac{N+1}{e^N}+\frac{1}{\lambda}=\\
+=-\frac{1}{\lambda}\lim\limits_{N\rightarrow\infty}\frac{1}{e^N}+\frac{1}{\lambda}=\frac{1}{\lambda}
+\end{multline*}
+$$ET^2=\int\limits_0^\infty t^2 \lambda e^{-\lambda t} dt = \left|\begin{matrix}s=\lambda t\\ ds = \lambda dt\end{matrix}\right|=\frac{1}{\lambda^2}\int\limits_0^\infty s^2 e^{-s}ds=\frac{1}{\lambda^2}\lim\limits_{N\rightarrow\infty}\int\limits_0^N s^2 e^{-s}ds$$
+Заметим, что:
+\begin{multline*}
+\int\limits_0^N s^2 e^{-s} ds = \left|\begin{matrix}u=s^2 & dv = e^{-s}ds\\
+du = 2sds & v = -e^{-s}\end{matrix}\right|=-s^2 e^{-s}\bigg|_0^N+2\int\limits_0^N s e^{-s}ds=\\=N^2 e^{-N}+2Ne^{-N}-2e^{-N}+2
+\end{multline*}
+Тогда:
+\begin{multline*}
+ET^2 = \frac{1}{\lambda^2}\lim\limits_{N\rightarrow\infty}\int\limits_0^N s^2 e^{-s}ds = -\frac{1}{\lambda^2}\lim\limits_{N\rightarrow\infty}\frac{N^2+2N+2}{e^N}+\frac{2}{\lambda^2}=\\-\frac{1}{\lambda^2}\lim\limits_{N\rightarrow\infty}\frac{2N+2}{e^N}+\frac{2}{\lambda^2}=-\frac{1}{\lambda^2}\lim\limits_{N\rightarrow\infty}\frac{2}{e^N}+\frac{2}{\lambda^2}=\frac{2}{\lambda^2}
+\end{multline*}
+$$D(T) = \frac{2}{\lambda^2}-\frac{1}{\lambda^2}=\frac{1}{\lambda^2}$$

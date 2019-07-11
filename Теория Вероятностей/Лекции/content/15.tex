@@ -1,0 +1,30 @@
+\section{Математическое ожидание и дисперсия}
+
+\textit{Числовые характеристики} случайной величины $\xi$:\\
+$E\xi$ -- математическое ожидание (центр симметрии)\\
+$D(\xi) = E(\xi - E\xi)^2$ -- дисперсия (мера рассеивания)\\
+$\sigma(\xi) = \sqrt{D(\xi)}$ -- среднеквадратическое отклонение.\\
+Для абсолютно-непрерывных случайных величин верно следующее:
+$$P_\xi (B) = P(\xi \in B) = \int\limits_B P_\xi (x)dx \Rightarrow E\xi = \int\limits_R x dF_\xi (x) = \int\limits_R x P_\xi (x) dx$$
+А для дискретных случайных величин $E\xi = \sum\limits_k x_k p_k$.
+
+\paragraph{Свойства дисперсии}
+\begin{enumerate}
+  \item \textit{Удобная формула для вычисления дисперсии} $D(\xi) = E\xi^2 -(E\xi)^2$.\\
+    $D(\xi) = E(\xi - E\xi)^2 = E(\xi^2 + (E\xi)^2 - 2\xi E\xi)=E\xi^2+(E\xi)^2-2 \xi E\xi = E\xi^2 - (E\xi)^2$
+
+  \item $D(\xi) \geq 0, D(\xi) = 0 \Leftrightarrow \xi = const$.\\
+    $D(\xi)=\int\limits_\Omega (\xi-E\xi)^2 dP = 0\Rightarrow\xi = E\xi$ почти наверно, т.к. $\xi - E\xi\geq 0$\\
+    $\xi=const=c\Rightarrow E\xi=Ec=c\Rightarrow D(\xi) =0$
+
+  \item $\forall A = const \Rightarrow D(\xi+A)=D(\xi)$.\\
+    $D(\xi+A)=E(\xi+A)^2-(E(\xi+A))^2=E(\xi^2+2\xi A+A^2)-((E\xi)^2+(EA)^2+2E\xi \cdot EA)=E\xi^2+2E\xi\cdot A+EA^2-(E\xi)^2-(EA)^2-2E\xi\cdot A=E\xi^2-(E\xi)^2 = 0$
+
+  \item $D(A\xi)=A^2 D(\xi)$.\\
+    $D(A\xi)=E(A\xi)^2-(E(A\xi))^2=A^2 E\xi^2-A^2(E\xi)^2 = A^2 D(\xi)$
+
+  \item Для любых независимых случайных величин $\xi,\eta \Rightarrow D(\xi\pm\eta)=D(\xi)+D(\eta)$.\\
+    $D(\xi-\eta)=E(\xi-\eta)^2-(E(\xi-\eta))^2=E(\xi^2+\eta^2-2\xi\eta)-((E\xi)^2+(E\eta)^2-2E\xi E\eta)=E\xi^2+E\eta^2-2E\xi E\eta-(E\xi)^2-(E\eta)^2+2E\xi E\eta=D(\xi)+D(\eta)$;\\
+    $D(\xi+\eta)=E(\xi+\eta)^2-(E(\xi+\eta))^2=E(\xi^2+\eta^2+2\xi\eta)-((E\xi)^2+(E\eta)^2+2E\xi E\eta)=E\xi^2+E\eta^2+2E\xi E\eta-(E\xi)^2-(E\eta)^2-2E\xi E\eta=D(\xi)+D(\eta)$.
+\end{enumerate}
+

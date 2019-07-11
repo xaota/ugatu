@@ -1,0 +1,37 @@
+\section{Пространства $(R^n, \beta (R^n))$}
+
+$\Arrowvert x-y \Arrowvert ^{2} = \sum\limits_{k=1}^{n} | x_{k}-y_{k}|^{2}$ -  метрика Евклида.\\
+$\Arrowvert x-y \Arrowvert =  \sum\limits_{k=1}^{n} \frac{1}{2^{k}} \frac{ | x_{k}-y_{k}|} {1 + |x_{k} - y_{k}|}$ - ограниченная метрика.\\
+$\beta (R^{n})$ - минимальная $\sigma$-алгебра, содержащая открытые и замкнутые множества $\beta(R^{n}) = \sigma\left(\prod\limits_{k=1}^{n} (a_{k}, b_{k}]\right)=...=...=...$
+
+\begin{definition}
+  Функция $F(x_{1}, ..., x_{n})$ называется \textbf{многомерной функцией распределения}, если:
+  \begin{enumerate}
+    \item $0 \leq F(\bar{x}) \leq 1$\par
+      $F(+\infty) = \lim\limits_{\bar{x}\rightarrow + \infty} F(\bar{x}) = 1$\par
+      $F(-\infty) = \lim\limits_{x \rightarrow -\infty} F(\bar{x}) = 0$
+
+    \item $F(\bar{x})$ - неубывает по каждой из переменных при фиксированных остальных
+
+    \item $F(\bar{x})$ - непрерывна справа
+
+    \item $F(\bar{x}) = 0$, если  хотя бы одно из из $x_{k} = \infty$\par
+      Если задана $p: F(\bar{x}) = p((-\infty, x_{1}] \times ... \times (-\infty, x_{n}])$\par
+      Проверим свойства: (* с предыдущего листа)\par
+      $p((\bar{a}, \bar{b}])$ может оказаться меньше нуля. Поэтому нужно еще одно свойство:
+
+    \item $p((\bar{a}, \bar{b}]) \geq 0$\par
+      $\Delta_{a_{k}b_{k}} = F(x_{1}, ..,x_{n}) = F(x_{1},...,x_{k-1}, b_{k}, x_{k+1}, ..., x_{n}) - F(x_{1}, ..., x_{k-1}, a_{k}, x_{k+1}, ..., x_{n})$\par
+      $p((\bar{a}, \bar{b}]) = \Delta a_{1}b_{1}\Delta a_{2}b_{2} F(x_{1},...,x_{n})$ \textbf{(1)}
+  \end{enumerate}
+\end{definition}
+
+\begin{proof}
+  Докажем по индукции:\\
+  Пусть при n \textbf{(1)} - верно. Рассмотрим $n+1$.\par
+  $\Delta a_{1}b_{1}...\Delta a_{n}b_{n}\Delta a_{n+1}b_{n+1} F(x_{1}...x_{n+1}) = \Delta a_{1}b_{1}...\Delta a_{n}b_{n} F(x_{1},...,x_{n},b_{n+1})$ - \\$\Delta a_{1}b_{1}... \Delta a_{n}b_{n} F(x_{1},...,x_{n},a_{n+1}) = \Delta a_{1}b_{1}...a_{n}b_{n} p((-\infty, x_{1}]\times ... \times (-\infty, x_{n}]\times (-\infty, b_{k+1}])$ - $ \Delta a_{1}b_{1}... a_{n}b_{n} p((-\infty, x_{1}]\times ... \times (-\infty, x_{n}]\times (-\infty, b_{n+1}]) = $в след. предположении $= p((a_{1}, b_{1}]\times ... (a_{n}, b_{n}]\times (-\infty b_{n+1}]) - p((a_{1}, b_{1}]\times ... \times (a_{n}, b_{n}] \times (-\infty , a_{n+1}]) = p((a_{1}, b_{1}]\times ... \times (a_{n}, b_{n}] \times (a_{n+1} , b_{n+1}])$\\
+  $\Delta a_{1}b_{1}...\Delta a_{n}b_{n} F(x_{1},...,x_{n}) \geq 0$. $(a_{k}, b_{k}), k=\overline{1,n}$, $a_{k} \leq b_{k}$\\
+  $\Rightarrow$ между вероятностной мерой $p$ в $R^{n}$ и функцией распределения $F(x_{1},...,x_{n})$ существует взаимно-однозначное соответствие.\\
+  Если существует функция распределения $F(x_{1},...,x_{n})$ $\Rightarrow$  мера строится так:\\
+  $B=(a_{1},b_{1}]\times ... \times (a_{n}, b_{n}]$; $p(B) = \Delta a_{1}b_{1}...\Delta a_{n}b_{n} F(x_{1}, ..., x_{n})$
+\end{proof}

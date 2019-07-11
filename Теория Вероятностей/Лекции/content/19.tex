@@ -1,0 +1,21 @@
+\section{Распределение Пуассона и простейший поток событий}
+\begin{definition}[Простейший поток событий]
+Простейшим потоком событий называется поток заявок, поступающий на какое-либо устройство, и удовлетворяющий следующим условиям:
+\begin{itemize}
+\item \textbf{Стационарность} -- Вероятность поступлния определённого числа заявок в промежуток времени $t$ зависит только от его длинны ($\forall t \Rightarrow P_{t, t+n} = P_{0,n}$).
+\item \textbf{Марковское свойство} или \textbf{отсутствие последействия} -- Вероятность того, что в будущем в систему поступит определённое число заявок, не зависит от числа заявок, поступивших в настоящее время.
+\item \textbf{Ординарность} -- Вероятность того, что за малый промежуток времени $\Delta t$ в систему поступит одна заявка, есть величина $\sigma(\Delta t)$.
+\end{itemize}
+\end{definition}
+$x$ -- число заявок за еденицу времени $[0,1]$.\\
+$P(x)=P(x=k)=\frac{\lambda^k}{k!}e^{-\lambda}, k=0,1,2,..., \lambda > 0$ -- некоторое число, характеризующее данный поток заявок.\\
+\begin{tabular}{c|cccc}
+$x$ & $0$ & $1$ & $...$ & n\\
+\hline
+$p$ & $1$ & $\frac{\lambda}{e^\lambda}$ & $...$ & $\frac{\lambda^n}{n!}e^{-\lambda}$
+\end{tabular}
+$$Ex=\sum\limits_{k=0}^\infty k \frac{\lambda^k}{k!}e^{-\lambda}=\sum\limits_{k=1}^\infty k \frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda}\lambda\sum\limits_{k=1}^\infty \frac{\lambda^{k-1}}{(k-1)!}=e^{-\lambda}\lambda e^\lambda = \lambda$$
+$\lambda$ -- среднее число заявок за еденицу времени (интенсивность простейшего потока)
+$$E(x(x-1))=\sum\limits_{k=0}^\infty k(k-1) \frac{\lambda^k}{k!}e^{-\lambda}=\sum\limits_{k=2}^\infty k(k-1) \frac{\lambda^k}{k!}e^{-\lambda}=e^{-\lambda}\lambda^2 \sum\limits_{k=2}^\infty \frac{\lambda^{k-2}}{(k-2)!}=e^{-\lambda}\lambda^2 e^\lambda = \lambda^2$$
+$Ex^2 = \lambda^2+Ex=\lambda^2+\lambda$\\
+$D(x)=Ex^2-(Ex)^2 = \lambda^2+\lambda-\lambda^2 = \lambda$

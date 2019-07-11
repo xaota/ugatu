@@ -1,0 +1,13 @@
+\section{Равномерное распределение на отрезке $[a,b]$}
+
+\begin{definition}[Равномерное распределение]
+  Абсолютно непрерывное распределение с плотностью $p(x) = \left\{\begin{matrix}
+  \frac{1}{b-a}, & x\in [a, b]\\
+  0, & x \notin [a, b]
+  \end{matrix}\right.$ называется \textbf{равномерным распределением} на отрезке $[a,b]$.
+\end{definition}
+
+$\xi$ -- случайная величина.
+$$E\xi(x) = P(\xi\leq x)=\int\limits_{-\infty}^x P_\xi (u) du = \int\limits_R x P(x) dx = \int\limits_a^b \frac{x}{b-a}dx=\frac{a+b}{2}$$
+$$E\xi^2 = \int\limits_a^b x^2\frac{1}{b-a}dx=\frac{1}{b-a}\frac{b^3-a^3}{3}$$
+$$D(\xi)=\frac{b^3-a^3}{3(b-a)}-\frac{(a+b)^2}{4}=\frac{b^2+ab+a^3}{3}-\frac{a^2+2ab+b^2}{4}=\frac{b^2-2ab+b^2}{12}=\frac{(b-a)^2}{12}$$

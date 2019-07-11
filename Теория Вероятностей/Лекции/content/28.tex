@@ -1,0 +1,53 @@
+\section{Неравенство Чебышева, закон больших чисел}
+\begin{definition}[Одинаково распределённые случайные величины]
+$\xi_1$ и $\xi_2$ -- одинаково распределены, если $F_{\xi_1}(x)=F_{\xi_2}(x)$
+\end{definition}
+У одинаково распределённых случайных величин любые числовые характеристики одни и те же, так что во многих случаях можно считать, что одинаково распределённые случайные величины это есть копии одного и того же случайного эксперимента.
+$$\bar{x}_n = \frac{\xi_1 + ... + \xi_n}{n}$$
+Пусть $a = E\xi, \sigma^2 = D(\xi) < \infty$ -- конечные моменты I и II порядка.
+$$\bar{\xi} = \frac{1}{\pi}\cdot\frac{1}{1+x^2}=P_\xi(x); E\xi = \frac{1}{\pi}\int\limits_R \frac{x}{1+x^2}dx$$
+\begin{theorem}[Закон больших чисел для независимых одинаково распределённых случайных величин с конечной дисперсией]
+Пусть $\xi_{1},..., \xi_{n}...$ -- последовательность независимых одинаково распределённых случайных величин.
+$$\left.\begin{array}{r}
+a = E\xi_{1}\\
+\sigma^{2} = D(\xi_{1}) < \infty\\
+\bar{x}_n = \frac{\xi_{1}+...+\xi_{n}}{n}\\
+\end{array}\right\}\Rightarrow\lim\limits_{n\rightarrow\infty}\bar{x}_n=E\xi_1=a$$
+\end{theorem}
+\begin{proof}
+Пусть $\sigma > 0$. Достаточно проверить что $P(|\bar{x}_n - a|>\sigma)\xrightarrow[n\rightarrow\infty]{}0$.\\
+Вместо этого можно проверить сходимость $E(\bar{x}_n-a))\xrightarrow[n\rightarrow\infty]{}0$ (в силу неравенства Чебышева).\\
+$E(\bar{x}_n\rightarrow a)^2)\xrightarrow[n\rightarrow\infty]{}0$\\
+Найдём $E\bar{x}_n = \frac{1}{n}\sum\limits_{k=1}^n \xi_n=\frac{1}{n} a n = a$\\
+$E(\bar{x}_n-a)^2=E(\bar{x}_n-E\bar{x}_n)^2=D(\bar{x}_n)$\\
+$D(\bar{x}_n) = D\left(\frac{1}{n}\sum\limits_{k=1}^n \xi_k\right)=\frac{1}{n^2}D\left(\sum\limits_{k=1}^n \xi_k\right)=\frac{1}{n^2}\sum\limits_{k=1}^n \underbrace{D(\xi_k)}_{=\sigma^2}=\frac{1}{n^2}\sigma^2 n=\frac{\sigma^2}{n}\xrightarrow[n\rightarrow\infty]{}0$
+
+Итого, для $L^2(\Omega)$ имеем: $\bar{x}_n\xrightarrow[n\rightarrow\infty]{}a$ и $D(\bar{x}_n)=\frac{\sigma^2}{n}$
+\end{proof}
+\begin{corollary}
+\begin{enumerate}
+\item Поскольку существует сходимость в $L^p(\Omega)\Rightarrow$ существует сходимость по вероятности, отсюда $P=\lim\limits_{n\rightarrow\infty}\bar{x}_n=a=E\xi_1$
+\item Позже будет показано и доказано (при более слабых условиях) а точнее:\\
+Если $E|\xi_1|<\infty, \xi_1,...,\xi_n$ -- независимо одинаково распределённые случайные величины, то $x_n\rightarrow a=E\xi_1$ почти наверно.
+\item В процессе доказательства получили: $E\bar{x}_n = a, D(\bar{x}_n) = \frac{\sigma^2}{n}$
+\item О законе статистической устойчивости случайных величин:\\
+Если берём эксперимент $\xi$ и повторяем его многократно в одних и тех же условиях независимым образом, также возмём cобытие $A$, связанное с этим экспериментом. Тогде, если $n$ -- общее число повторений, то $\frac{n_A}{n}=p$ -- являющаяся постоянной относительная частота появления события $A$.
+\item $P(A)=?$\\
+$E\textbf{1}_A=P(A)$\\
+Повторяем $A$ многократно в одних и тех же условиях.\\
+$\textbf{1}_A^{(1)}, \textbf{1}_A^{(2)},...,\textbf{1}_A^{(n)}$ -- независимо одинаково распределённые случайные величины\\
+$\frac{1}{n}\sum\limits_{k=1}^n \textbf{1}_A^{(k)}\rightarrow E\textbf{1}_A = P(A)$\\
+$n_A=\sum\limits_{k=1}^n \textbf{1}_A^{(k)}$ -- число появления события $A$ в $n$ независимых испытаниях\\
+$\frac{n_a}{n}=\frac{\textbf{1}_A^{(1)}+...+\textbf{1}_A^{(n)}}{n}\approx E\textbf{1}_A = P(A)$ согласно ЗБЧ.
+\item $Ef(\xi)=?$\\
+$\{\xi_{n}\} - n$ копий случайной величины $\xi$\\
+$E\xi^{2} = \frac{\xi_{1}^{2}+...+\xi_{n}^{2}}{n}$\\
+$Ef(\xi) = \frac{f(\xi_{1})+...+f(\xi_{n})}{n}$, где $f(*)$ -- детерминирована и $E|f(\xi)| < \infty$
+\item $F_{\xi}(x) = p(\xi \leq x) = E\textbf{1}_{(\xi \leq x)} \approx \frac{\textbf{1}_{(\xi_{1} \leq x)} +...+\textbf{1}_{(\xi_{n} \leq x)}}{n} = \frac{1}{n}x_{n},$ где $x_{n}$ -- число появления $(\xi \leq x)$ в $n$ испытаниях.\\
+ $F_{\xi}(x) = F_{n}^{*}(x) = \frac{1}{n} \sum\limits_{k=1}^{n} \textbf{1}(\xi_{k} \leq x)$ -- эмпирическая функция распределения.
+\item $\int\limits_{a}^{b} f(x)dx = ?$ (Используем Метод Монте-Карло)\\
+Пусть $\xi \sim [a, b]$ (равномерное распределение) $\Rightarrow P_\xi (x) = \left\{\begin{matrix} \frac{1}{b-a}, & x \in [a,b]\\0, & x \notin [a,b]\end{matrix}\right.$
+Тогда, $Ef(\xi) = |$ замена переменных $| = \frac{1}{b-a} \int\limits_{a}^{b} f(x)dx$\\
+$Ef(\xi) = \int\limits_\Omega f(\xi)dP = \int\limits_a^b \frac{1}{b-a} f(x)dx = \frac{1}{b-a}\int\limits_a^b f(x)dx =  \frac{f(\xi_{1})+...+f(\xi_{n})}{n} = \frac{1}{b-a} \int\limits_{a}^{b} f(x)dx$
+\end{enumerate}
+\end{corollary}

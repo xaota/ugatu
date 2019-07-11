@@ -1,0 +1,51 @@
+\section{Разные виды сходимости случайных величин, характеризация сходимости с вероятностью 1}
+$\{\xi_{n} \}$ на $(\Omega, F, P)$ сходятся \texttt{по вероятности} к $\xi$, если $p(|\xi - \xi_{n}|>\sigma )\xrightarrow[n\rightarrow \infty]{} 0$ для любого фиксированного $\sigma$. Обозначается $(\xi_n\xrightarrow{p}\xi)$
+
+$\{\xi_{n} \}$ \texttt{сходится в $L^{p}$}, $p \geqslant 1$, если $E(\xi - \xi_{n})^p \xrightarrow[n \rightarrow \infty]{} 0$
+
+$\{\xi_{n} \}$ \texttt{сходится с $p=1$} (почти наверно), если $p(\omega : \lim\limits_{n \rightarrow \infty}\xi_{n} = \xi) = 1$
+
+$\{\xi_{n} \}: \xi_{n}$ могут быть заданы на разных вероятностных пространствах. $\{\xi_{n}\}$  сходится слабо (\texttt{по распределению}) к $\xi$, если для любой непрерывной ограниченной функции $\Phi(x) : E\Phi(\xi_{n}) \rightarrow E\Phi(\xi)$. Слабая сходимость: $\xi_{n} \xrightarrow{d}\xi, \xi_{n} \xrightarrow{\omega}\xi$. Позже будет доказано, что данное определение эквивалентно следующему: $F_{\xi_{n}}(x) = p(\xi_{n}\leqslant x) \rightarrow F_{\xi}(x) = p(\xi \leqslant x) \forall x$ -- из непрерывности $F_{\xi}(x)$.
+
+$E\Phi (\xi_{n}) = \int\limits_{R}^{}\Phi (x)dF_{\xi_{n}}(x) \xrightarrow[n\rightarrow \infty]{}E\Phi(\xi) = \int\limits_{R}^{}\Phi(x)dF_{\xi}(x)$
+
+Фундаментальная сходимость:\\
+$\forall \epsilon >0 \exists n_{0}: \forall n \geqslant n_{0}, \forall p \in N$.  $|x_{n+p}-x_{n}|<\epsilon$
+
+\begin{theorem}[характеризация сходимости с $p=1$]
+$\{\xi_{n} \}, \xi$ - случайная величина на $(\Omega, F, P)$
+\begin{itemize}
+\item $\xi_{n} \rightarrow \xi$ почти наверно $\Leftrightarrow \forall \epsilon > 0 p(\sup\limits_{k \geqslant n}|\xi_{k}-\xi|\geqslant \epsilon) \xrightarrow[n \rightarrow \infty]{} 0$
+\item $\xi_{n}$ -- фундаментальной последовательности $\Leftrightarrow$ справедливо хотя бы одно из двух:\\
+$p(\sup\limits_{k \geqslant 0}|\xi_{n+k}-\xi_{k}|\geqslant \epsilon)\xrightarrow[n\rightarrow \infty]{} 0$, $p(\sup\limits_{k \geqslant n, l\geqslant n} |\xi_{k}-\xi_{l}|\geqslant \epsilon) \xrightarrow[n\rightarrow \infty]{} 0$. $\forall \epsilon > 0$
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Возьмем $\epsilon > 0$, $A^{\epsilon}_{n} = \{\omega : |\xi_{n} - \xi|\geqslant \epsilon\}$\\
+$\forall \epsilon>0 \exists N: \forall n\geqslant N$  $|\xi_{n}-\xi|<\epsilon$ -- сходится\\
+$\exists \epsilon > 0 |\xi_{n} - \xi|\geqslant \epsilon$ - происходит бесконечно часто -- расходится\\
+$\xi_{n}\nrightarrow \xi \Leftrightarrow \exists \epsilon >0: A_{n}^{\epsilon}$ - происходит бесконечно часто.\\
+$A^{\epsilon} = \varlimsup\limits_{n} A_{n}^{\epsilon} = \bigcap\limits_{n} \bigcup\limits_{k\geqslant n} A_{k}^{\epsilon}$\\
+$\xi_{n}\nrightarrow \xi \Leftrightarrow \exists \epsilon >0: A^{\epsilon}$ имеет положительную вероятность.\\
+$\xi_{n}\rightarrow \xi \Leftrightarrow p\left(\bigcup\limits_{\epsilon}A^{\epsilon}\right) = 0 = p\left(\bigcup\limits_{m}A^{\frac{1}{m}}\right)$\\
+Чтобы доказать сходимость с вероятностью равной единице, необходимо и достаточно показать что, $p\left(\bigcup\limits_{m}A^{\frac{1}{m}}\right)$
+Покажем, что $0=p\left(\bigcup\limits_{m}A^{\frac{1}{m}}\right)\Leftrightarrow p\left(A^{\frac{1}{m}}\right)=0$.\\
+$p(\bigcup\limits_{m}A^{\frac{1}{m}}) \leqslant \sum\limits_{m}p(A^{\frac{1}{m}})$\\
+Если $p(A^{\frac{1}{m}})=0 \forall m \Rightarrow p\left(\bigcup\limits_{m}A^{\frac{1}{m}}\right)=0$ и обратно.
+
+$p\left(\bigcup\limits_{m}A^{\frac{1}{m}}\right)=0$, $p\left(\bigcup\limits_{m}A^{\frac{1}{m}}\right)\geqslant p\left(\bigcup\limits_{m}A^{\frac{1}{m_{0}}}\right) \Rightarrow p\left(A^{\frac{1}{m}}\right)=0 \Rightarrow \xi_{n}\rightarrow\xi \Leftrightarrow p\left(\bigcup\limits_{m}A^{\frac{1}{m}}\right)=0 \Leftrightarrow p\left(A^{\frac{1}{m}}\right)=0 \forall m \Leftrightarrow p(A^{\epsilon})=0 \forall \epsilon$
+
+$A^{\epsilon}=\bigcap\limits_{n}\bigcup\limits_{k\geqslant n} A_{k}^{\epsilon} \Rightarrow $ таким образом, усл. равносильно $\sigma$-аддитивности, т.к. последовательность монотонная $\Rightarrow$\\
+$p(A^{\epsilon})=
+\lim\limits_{n} p\left(\bigcup\limits_{k\geqslant\ n} A_{k}^{\epsilon}\right) =
+\lim\limits_{n} p\left(\bigcup\limits_{k \geqslant n} \{|\xi_{n}-\xi|\geqslant \epsilon \}\right) =
+\lim\limits_{n} p(\sup\limits_{k\geqslant n}|\xi_{n}-\xi| \geqslant \epsilon) \Rightarrow$\\
+$\Rightarrow \xi_{n}-\xi \Leftrightarrow p\left(\sup\limits_{k\geqslant n} |\xi_{n}-\xi|\geqslant \epsilon\right) \xrightarrow[n \rightarrow
+\infty]{} 0 \forall \epsilon > 0$
+\end{proof}
+\begin{corollary}
+$$p\left(\sup\limits_{k\geqslant n} |\xi_{n}-\xi|\geqslant \epsilon\right) = \left(\bigcup\limits_{k\geqslant n} A_{k}^{\epsilon}\right)\leqslant
+ \sum\limits_{k\leqslant n}p(A_{k}^{\epsilon})=\sum\limits_{k\geqslant n} p(|\xi_{n}-\xi|\geqslant \epsilon)$$
+ Если ряд $\sum\limits_{k} p(|\xi_{n}-\xi|\geqslant \epsilon) $
+  сходится $\Rightarrow \xi_{n}-\xi$ почти наверно.
+\end{corollary}

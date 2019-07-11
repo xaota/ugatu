@@ -1,0 +1,47 @@
+\section{Нормальное (Гауссовское) распределение}
+
+\begin{definition}[Нормальное распределение или распределение Гаусса]
+  Случайная величина $\xi$ имеет нормальное распределение с параметрами $a, \sigma$, где $\sigma > 0$ если
+  $$P_{a,\sigma}=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-a}{\sigma}\right)^2}$$
+\end{definition}
+
+Если $a=0, \sigma=1$, то подразумевается стандартное нормальное распределение. Тогда $\phi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$.\\
+$\Phi(x)=\int\limits_{-\infty}^\infty \phi(y)dy=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^x e^{-\frac{y^2}{2}}dy$ -- Функция Лапласа.
+$$E\xi = \int\limits_{-\infty}^\infty x P_{a,\sigma}(x)dx = \int\limits_{-\infty}^\infty (x-a)\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-a}{\sigma}\right)^2}dx+a\underbrace{\int\limits_{-\infty}^\infty \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-a}{\sigma}\right)^2}dx}_{=1}=I_1+I_2$$
+$I_2 = a, I_1 = \frac{1}{\sqrt{2\pi}\sigma}\int\limits_{-\infty}^\infty y e^{-\frac{y^2}{2\sigma^2}}dy = 0 \Rightarrow E\xi = a$
+$$D(\xi) = \int\limits_R (x-a)^2 \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\left(\frac{x-a}{\sigma}\right)^2}dx = \left|\begin{matrix}y=\frac{x-a}{\sigma}\\dy = \frac{1}{\sigma}dx\end{matrix}\right| = \sigma^2\underbrace{\frac{1}{\sqrt{2\pi}}\int\limits_R y^2 e^{-\frac{y^2}{2}}dy}_{=1} = \sigma^2$$
+$P(A\leqslant\xi\leqslant B)=F(B) - F(A)$
+
+\subsection{Центрирование и нормирование случайной величины}
+$E\xi = a, D(\xi) = \sigma^2$
+
+\begin{definition}[Центрированная случайная величина]
+  Любая случайная величина с нулевым матматическим ожиданием назвается \textbf{центрированной}.
+\end{definition}
+
+\paragraph{Центрирование случайной величины:}
+$\bar{\xi}=\xi - a; E\bar{\xi} = E\xi - Ea = a - a = 0$
+
+\paragraph{Центрирование и нормирование случайной величины:}
+Пусть $\xi_0 = \frac{\xi-a}{\sigma}$
+$E\xi_0 = E\left(\frac{\xi-a}{\sigma}\right)=\frac{1}{\sigma}E\xi-\frac{a}{\sigma}=\frac{a}{\sigma}-\frac{a}{\sigma}=0$\\
+$D(\xi_0)=E(\xi_0-E\xi_0)^2 = E\left(\frac{\xi-a}{\sigma}-E\left(\frac{\xi-a}{\sigma}\right)\right)^2 = E\left(\frac{\xi-E\xi^2}{\sigma}\right)^2 = \frac{\overbrace{E(\xi - E\xi)^2}^{\sigma^2}}{\sigma^2}=1$\\
+Таким образом, $\xi_0 \sim N(0, 1)$.
+
+\begin{example}
+  Если $\xi\sim N(0, \sigma) \Rightarrow \alpha\xi + \beta \sim N(\bar{a}, \bar{\sigma})$.\\
+  $P(\alpha\xi+\beta\leqslant x)=p(A)=E\textbf{1}_A=E\textbf{1}_{(\alpha\xi+\beta \leqslant x)}=\int\limits_{-\infty}^{\frac{x-\beta}{\alpha}} p_{\alpha, \sigma}(y)dy=\left|\begin{matrix}z=\frac{y-\beta}{\alpha}\\dz=\frac{dy}{\alpha}\end{matrix}\right|=\int\limits_{-\infty}^z \alpha p_{a,\sigma}(\alpha z+\beta)dz$
+\end{example}
+
+\begin{multline*}
+  P(A < \xi < B) = P(A-a<\xi-a<B-a)=\\
+  =P\left(\frac{A-a}{\sigma}<\xi_0<\frac{B-a}{\sigma}\right)=F\left(\frac{B-a}{\sigma}\right)-F\left(\frac{A-a}{\sigma}\right)
+\end{multline*}
+
+\begin{proposition}
+  $\forall a,\sigma \Rightarrow P(|\xi-a|<3\sigma) = 0.998$\\
+\end{proposition}
+
+\begin{proof}
+  $P(-3\sigma<\xi-a<3\sigma)=P\left(-3<\frac{\xi-a}{\sigma}<3\right)=P(-3<\xi_0<3)=\Phi(3)-\Phi(-3)=\frac{1}{\sqrt{2\pi}}\left(\int\limits_{-\infty}^3 e^{-\frac{y^2}{2}}dy - \int\limits_{-\infty}^{-3} -e^{-\frac{y^2}{2}}dy\right) = \frac{1}{\sqrt{2\pi}}\left(\int\limits_{-3}^3 e^{-\frac{y^2}{2}}dy\right)\approx\frac{1}{2\pi}\cdot 2.49986 \approx 0.998$
+\end{proof}

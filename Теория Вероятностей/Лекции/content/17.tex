@@ -1,0 +1,10 @@
+\section{Биномиальное распределение}
+Дано $n$ независимых одинаковых экспериментов, в $x$ из которых произошло событие $A$.\\
+$\mathbf{1}_A^{(k)}$ -- индикатор появления события $A$ при $k$-том испытании.\\
+$x = \mathbf{1}_A^{(1)}+...+\mathbf{1}_A^{(n)}$\\
+$P(A)=p; P(\bar{A})=q$\\
+$p(x=0)=q^n$\\
+$p(x=n)=p^n$\\
+$p(x=k)=p^k\cdot q^{n-k}\cdot C_n^k$ -- Формула Бернулли\\
+$Ex = E\sum\limits_{k=1}^n \mathbf{1}_A^{(k)} = n\cdot p$\\
+$D(x) = D\left(\sum\limits_{k=1}^n \mathbf{1}_A^{(k)}\right) = \sum\limits_{k=1}^n D\left(\mathbf{1}_A^{(k)}\right) = n\cdot pq$

@@ -1,0 +1,69 @@
+\section{Условное математическое ожидание}
+$$(\Omega, F, P), \xi \in L^1(\Omega)$$
+$G \in F, G - \sigma$-алгебра.
+\begin{definition}[Условное Математическое Ожидание -- УМО]
+Случайная величина $\xi$ относительно $\sigma$-алгебры $G$ называется случайной величиной $E(\xi | G)$, такой что:
+\begin{enumerate}
+\item $E(\xi | G) - G$-измерима
+\item $\forall A \in G \Rightarrow \int\limits_A \xi dP = \int\limits_A E(\xi | G) dP$
+\end{enumerate}
+\end{definition}
+\begin{remark}
+ Для $\xi \notin L^1(\Omega)$ УМО не существует
+\end{remark}
+\subsection{Существование УМО}
+Очевидно, что $\xi \geqslant 0$. Построим меру $\lambda(A) = \int\limits_A \xi dP, A \in G$, где $\lambda(A)$ - некоторая конечная мара на $G$ (т.к. $\xi \in L^1(\Omega)$)
+
+В силу Теоремы Радона-Никодима имеем: мера $\lambda(A)$ абсолютно неприрывна относительно $p(A) : \lambda\ll p$, а значит, существует $p(\omega)$, такая что:
+\begin{enumerate}
+\item $p(\omega) - G$-измерима;
+\item $\int\limits_A \xi dP = \int\limits_A p(\omega)dP \Rightarrow E(\xi | G)  = p(\omega)$.
+\end{enumerate}
+\begin{remark}
+Из способа построения УМО следует, что $E(\xi | G)$ определено с точностью до множеств нулевой вероятности (из-за точности $p(\omega)$)
+\end{remark}
+\subsection{Свойства УМО}
+\begin{enumerate}
+\item $\xi = c = const \Rightarrow E(\xi | G) = c = const$ почти наверное
+\begin{proof}
+ $\xi = c = const$, а значит, измерима относительно любой $\sigma$-алгебры. Следовательно,
+ $E(\xi | G) = const - G$-измерима. Тогда, при $A \in G$ имеем:
+ $$\int\limits_A c dP = \int\limits_A \underbrace{E(\xi | G)}{=c} dP$$
+\end{proof}
+\item $\xi \leqslant \eta \Rightarrow E(\xi | G) \leqslant E(\eta | G)$ почти наверное
+\begin{proof}
+$\int\limits_A \xi dP = \int\limits_A (\eta | G) dP$, $\int\limits_A \xi dP = \int\limits_A (\eta | G) dP$
+
+Из $\xi \leqslant \eta \Rightarrow \int\limits_A (\xi | G) dP \leqslant \int\limits_A (\eta | G) dP$, при чём оба подинтегральных выражения $G$-измеримы. Тогда
+
+$\forall A \in G \Rightarrow E(\xi | G) \leqslant E(\eta | G)$
+\end{proof}
+\item $|E(\xi | G)| \leqslant E(|\xi| | G)$ почти наверное
+\begin{proof}
+$-|\xi|\leqslant \xi\leqslant |\xi| \Rightarrow E(-|\xi| | G)\leqslant E(\xi | G)\leqslant E(|\xi| | G)\Rightarrow -E(|\xi| | G)\leqslant E(\xi | G)\leqslant E(|\xi| | G)$
+\end{proof}
+\item $E(A \xi + B \eta | G) = A E(\xi | G) + B E(\eta | G)$
+\begin{proof}
+Обе стороны $G$-измеримы, проверим определение
+$\int\limits_c (A\xi + B\eta) dP = \int\limits_c E(A\xi+B\eta | G) dP - G$-измерима
+
+$\int\limits_c (A\xi + B\eta) dP = A\int\limits_c \xi dP + B\int\limits_c \eta dP = A\int\limits_c E(\xi | G) dP + B\int\limits_c E(\eta | G) dP = \int\limits_c (A E(\xi | G) + B E(\eta |G)) dP - G$-измерима.
+\end{proof}
+\item $G = \{\emptyset, \Omega\} \Rightarrow E(\xi | G) = E\xi$
+\begin{proposition}
+$$E\xi = \int\limits_\Omega \xi dP$$
+$\forall A \subset G \Rightarrow \int\limits_A E(\xi | G) dP = \int\limits_A\xi dP$
+
+В частности, $\int\limits_G E(\xi | G) dP = \int\limits_G\xi dP$
+
+Если $G = \emptyset \Rightarrow 0 = 0$
+
+Если $G = \Omega \Rightarrow \int\limits_\Omega E(\xi | G)dP = E\xi \Rightarrow E\xi = E\xi$
+\end{proposition}
+\item $\xi - G$-измерима, и $E(\xi | G) = \xi$ почти наверное.
+\item $E(E(\xi | G) = E\xi$ почти наверное.
+\item $E$
+\end{enumerate}
+Относительно приведённой $\sigma$-алгебры измеримы только постоянные случайные величины, следовательно, $E(\xi | G) = c$.
+
+Возьмем $A\in\Omega \Rightarrow \int\limits_\Omega \xi dP = \int\limits_\Omega c dP = c \cdot p(\omega) = c \Rightarrow E\xi = c$
