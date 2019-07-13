@@ -79,7 +79,7 @@ $A = (a_{i,j})(i = \overline{1,m}$, $j = \overline{1,n})$.
 \begin{definition}
   Суммой матриц $A$ и $B \in \mathds{R}_{m,n}$ (т.е. имеющих одинаковые порядки) называется матрица $C \in \mathds{R}_{m,n}:c_{ij}=a_{ij}+b_{ij}, i = \overline{1,m}, j = \overline{1,n}$.
 \end{definition}
-\textbf{Обозначение:} $C = A + B$.
+\noindent \textbf{Обозначение:} $C = A + B$.
 
 \begin{example}
   \[ \begin{pmatrix}
@@ -94,8 +94,214 @@ $A = (a_{i,j})(i = \overline{1,m}$, $j = \overline{1,n})$.
   \end{pmatrix} \]
 \end{example}
 
-\begin{properties}[сложения матриц]
+\begin{properties}[сложения матицы]
+  $\\$
   \begin{enumerate}
+    \item Коммутативность сложения, т.е. $\forall A,B \in \mathds{R}_{m,n}$ справедливо $A+B=B+A $.
+    \item Ассоциативность сложения, т.е. $\forall A,B,C \in \mathds{R}_{m,n}$ справедливо $(A+B)+C=A+(B+C)$.
+    \item $\forall A \in \mathds{R}_{m,n}, A+O_{m,n}=O_{m,n}+A=A$.
+    \item $\forall A \in \mathds{R}_{m,n} \exists! B \in \mathds{R}_{m,n} : A+B=B+A=O_{m,n}$. При этом, если $A=(a_{ij})$, то $b_{i,j}=-a_{ij}$. Матрица $B$ называется противоположной к $A$ и обозначается $-A$.
 
+    Доказательство свойств провести самостоятельно прямыми вычисления-ми.
   \end{enumerate}
+\end{properties}
+
+\begin{definition}
+  Произведением элемента $\alpha \in \mathds{R}$ на матрицу $A \in \mathds{R}_{m,n}$ называется матрица $C \in \mathds{R}_{m,n} : c_{ij}=\alpha a_{ij}, i = \overline{1, m}, j = \overline{1, n}$.
+\end{definition}
+\noindent \textbf{Обозначение:} $C=\alpha A$.
+
+\noindent Операция, сопоставляющая $\alpha$ и $A$ их произведению $C=\alpha A$ называется умножением числа на матрицу.
+
+\begin{properties}[умножения матрицы на число]
+$\\ \forall \alpha, \beta \in \mathds{R}_{m,n}$ выполняется:
+\begin{enumerate}
+  \item $\alpha(\beta A) = (\alpha \beta)A$,
+  \item $(\alpha + \beta)A = \alpha A + \beta A$,
+  \item $\alpha(A+B)=\alpha A + \alpha B$,
+  \item $1 \cdot A = A $.
+
+  Доказательство свойств - самостоятельно прямыми вычисления-ми.
+\end{enumerate}
+\end{properties}
+
+\textbf{Замечание.} Разность $A-B$ двух прямоугольных матриц $A$ и $B \in \mathds{R}_{m,n}$ определяется равенством $A-B=A+(-1)B=A+(-B)$.
+\begin{definition}
+  Произведением матриц $A=(a_{ij})$ размера $m \times n$ и $B=(b_{ij})$ размера $n \times p$ называется матрица $C=(c_{ij})$ размеров $m \times p$ такая, что каждый элемент $c_{ij}= \sum \limits_{k=1}^n a_{ik}b_{kj}$.
+\end{definition}
+\noindent \textbf{Обозначение:} $C=A \cdot B \equiv AB$.
+Операция произведения $A$ и $B$ называется умножением этих матриц.
+
+Из определения следует, что элемент матрицы $A$ и $B$ , стоящий в $i$–ой строке и $j$–ом столбце, равен сумме произведений элементов $i$–ом столбце, равен сумме произведений элементов $A$ на $j$–ый столбец матрицы $B$.
+\begin{example}
+  \begin{enumerate} $\\$
+    \item $A= \begin{pmatrix}
+      1& 3\\
+      -2& 0
+    \end{pmatrix}$, $\begin{pmatrix}
+      -1& 3& 6\\
+      2& -8& 7
+    \end{pmatrix} \rightarrow AB=\begin{pmatrix}
+      3& -13& 20\\
+      3& -9& -18
+    \end{pmatrix}$,
+    \item $A= \begin{pmatrix}
+      1& 2
+    \end{pmatrix}$, $\begin{pmatrix}
+      -1\\
+      0
+    \end{pmatrix} \rightarrow AB=\begin{pmatrix}
+      -1
+    \end{pmatrix} , BA=\begin{pmatrix}
+      -1& -2\\
+      0& 0
+    \end{pmatrix}$.
+  \end{enumerate}
+\end{example}
+
+Таким образом, две матрицы можно перемножать, если число столбцов матрицы $A$ равно числу строк матрицы $B$. Тогда матрица $A$ называется согласованной с $B$. Из согласованности $A$ c $B$ не следует согласованность $B$ с $A$. Если даже условие согласования выполняется, то в общем случае $AB \neq BA$.
+\begin{properties}[умножения матриц]
+  \begin{enumerate} $\\$
+    \item Ассоциативность умножения матриц, т.е. $\forall A \in \mathds{R}_{m,n}, B \in \mathds{R}_{n,p}, C \in \mathds{R}_{p,l}$ справедливо $(AB)C=A(BC)$.
+
+
+    \begin{proof}Из определения 5 следует, что элемент $d_{it}$ матрицы $(AB)C$ равен $d_{it} = \sum \limits_{k=1}^p(\sum \limits_{j=1}^n a_{ij}b_{jk})c_{kt}$, а элемент $\overline{d_{it}}$ матрицы $A(BC)$ равен $\overline{d_{it}} = \sum \limits_{j=1}^n a_{ij}(\sum \limits_{k=1}^p b_{jk}c_{kt})$. Равенство $d_{it}=\overline{d_{it}}$ следует из возможности изменения порядка суммирования.\end{proof}
+    \item Дистрибутивность сложения относительно умножения, т.е. $\\ A(B+C) = AB +AC, \forall A \in \mathds{R}_{m,n}, B,C \in \mathds{R}_{n,p}. \\ (A + B)C = AC + BC, \forall A,B \in \mathds{R}_{m,n}, C \in \mathds{R}_{n,p}$.
+
+    \begin{proof}
+      Доказательство следует из определения суммы и произведения матриц.
+    \end{proof}
+    \item $E_{m}A = AE_{n} = A, \forall A \in \mathds{R}_{m,n }.$
+
+    \begin{proof}
+      Пусть $B=(b_{ij}):B=AE_{n}$, и $C=E_{m}A$. Тогда $b_{ij} = \sum \limits_{k=1}^n a_{ik} \delta_{kj} = a_{ij} \delta_{jj} = a_{ij}$. Здесь $\delta_{ij}= \begin{cases} 1,i=j \\ 0,i \neq j \end{cases}$ - символ Кронекера. $\\ c_{ij} = \sum \limits_{k=1}^m \delta_{ik}a_{kj}=a_{ij}$.
+    \end{proof}
+    \item $(\alpha E_{m})A= \alpha A = A(\alpha E_{n}), \forall A \in \mathds{R}_{m,n}, \forall \alpha \in \mathds{R}$.
+    \item $\forall A \in \mathds{R}_{m,n}, O_{p,m} \cdot A = O_{p,n}, A \cdot O_{n,p} = O_{m,p}.$
+    \begin{proof}
+    Доказательство свойств 4 и 5 проводится аналогично свойству 3.
+  \end{proof}
+
+    \item $\forall A \in \mathds{R}_{m,n}, \forall B \in \mathds{R}_{n,p}, \forall \alpha \in \mathds{R} \rightarrow \alpha(AB) = (\alpha A)B = A(\alpha B)$.
+  \end{enumerate}
+\end{properties}
+\textbf{Замечание.} В общем случае произведение матриц не коммутативно. Например, \[ \begin{pmatrix} 0 & 1\\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 0\\ 1 & 0 \end{pmatrix} \neq \begin{pmatrix} 0 & 0\\ 1  & 0 \end{pmatrix} \begin{pmatrix} 0 & 1\\ 0 & 0 \end{pmatrix} \]
+  Но из свойств 4 и 5 $\rightarrow$ умножение квадратной матрицы на $E$ и $O$ коммутирует. Также коммутирует умножение квадратной матрицы на ска-лярную.
+
+\subsection{Блочные матрицы.}
+Пусть матрица $A$ при помощи горизонтальных и вертикальных прямых разбита на отдельные прямоугольные клетки, каждая из которых является матрицей меньших раз-меров и называется блоком исходной матрицы. В этом случае $A$ рассматривается как некоторая новая, блочная матрица $A = ||A_{\alpha \beta}||$, элементами которой являются блоки $||A_{\alpha \beta}||$ указанной матрицы ($A_{\alpha \beta}$– элементы матрицы, поэтому $A$ заглавное). Здесь $\alpha$ – номер блочной строки, $\beta$ – столбца.
+
+Например, если \[A = \begin{pmatrix}
+  \begin{tabular}{l | l}
+    $a_{11}$ $a_{12}$ $a_{13}$&$a_{14}$ $a_{15}$\\ \hline
+    $a_{21}$ $a_{22}$ $a_{23}$ & $a_{24}$ $a_{25}$ \\
+    $a_{31}$ $a_{32}$ $a_{33}$ & $a_{34}$ $a_{35}$
+    \end{tabular}
+\end{pmatrix} \text{, то } A_{11} = \begin{pmatrix}
+  a_{11} & a_{12} & a_{13}
+\end{pmatrix}, A_{12} = \begin{pmatrix}
+  a_{14} & a_{15}
+\end{pmatrix},\]
+\[ A_{21} = \begin{pmatrix}
+  a_{21} & a_{22} & a_{23} \\
+  a_{31} & a_{32} & a_{33}
+\end{pmatrix}, A_{22} = \begin{pmatrix}
+  a_{24} & a_{25} \\
+  a_{34} & a_{35}
+\end{pmatrix}
+  \].
+
+  Замечательным является факт, что операции с блочными матрицами совер-шаются по тем же правилам, что и с обычными, только в роли элементов вы-ступают блоки. Действительно, если
+  $A=\begin{Vmatrix}
+    A_{\alpha \beta}
+  \end{Vmatrix}$, то $\lambda A = \begin{Vmatrix}
+\lambda a_{ij}
+  \end{Vmatrix} = \begin{Vmatrix}
+    \lambda A_{\alpha \beta}
+  \end{Vmatrix}$, где $\begin{Vmatrix}
+    \lambda A_{\alpha \beta}
+  \end{Vmatrix}$ вычисляется по обычному правилу умножения матрицы на число. Анало-гично, если $A$ и $B$ имеют одинаковые порядки и одинаковым образом разбиты на блоки, то сумме $A +B$ отвечает блочная матрица $C=\begin{Vmatrix}
+  C_{\alpha \beta}
+  \end{Vmatrix} : C_{\alpha \beta} = A_{\alpha \beta} + B_{\alpha \beta}$.
+
+  Для умножения $A \in \mathds{R}_{m,n}$ на $B \in \mathds{R}_{n,p}$ необходимо согласовать их разбиение на блоки, т.е. число столбцов каждого блока $A_{\alpha \beta}$ должно быть равно числу строк блока $B_{\beta \gamma}$. Тогда $C_{\alpha \beta} = \sum \limits_{\gamma} A_{\alpha \gamma} B_{\gamma \beta}$.
+  \begin{proof}
+Для доказательства необходимо расписать правую и левую части в терминах обычных элементов матриц $C,A$ и $B$.Пусть разбиение матриц проведено следующим образом:
+  $1 \leq m_{1} < m_{2} < \dotso < m_{k} = m, 1 \leq p_{1} < p_{2} < \dotso < p{q} = p.\\$
+  Если $i \in m_{\alpha}, j \in p_{\beta}$, то $c_{ij}=C_{\alpha \beta}$ и $c_{ij}=\sum \limits_{t=1}^n a_{it}b_{tj} = \sum \limits_{t=1}^{n_{1}} + \sum \limits_{t=n_{1}+1}^{n_{2}} + \dotso + \sum \limits_{t=n_{l-1}+1}^{n_{l}}$, откуда следует, что $ C_{\alpha \beta} = A_{\alpha 1}B_{1 \beta} + \dotso + A_{\alpha l}B_{l \beta}$, что и требовалось доказать.
+\end{proof}
+
+\begin{example}
+  Пусть $A=\begin{pmatrix}
+    \begin{tabular}{l | l}
+      3 & 0 -1\\
+      2 & 1 0\\ \hline
+      -6 & 0 3
+    \end{tabular}
+  \end{pmatrix}, B=\begin{pmatrix}
+    \begin{tabular}{l | l}
+      1 2 & 0 1 \\ \hline
+      0-3 & 3 0 \\
+      1 0 & 0 0
+    \end{tabular}
+  \end{pmatrix}$, т.е. $\\A=\begin{pmatrix}
+    A_{11} & A_{12} \\
+    A_{21} & A_{22}
+  \end{pmatrix}, B=\begin{pmatrix}
+    B_{11} & B_{12} \\
+    B_{21} & B_{22}
+  \end{pmatrix},$ где $A_{11}=\begin{pmatrix}
+    3 \\
+    2
+  \end{pmatrix}, A_{12}=\begin{pmatrix}
+    0 & -1 \\
+    1 & 0
+  \end{pmatrix}, A_{21}=\begin{pmatrix}
+    -6
+  \end{pmatrix}, A_{11}=\begin{pmatrix}
+    0 & 3
+  \end{pmatrix}, B_{11}=\begin{pmatrix}
+  1 & 2
+  \end{pmatrix}, B_{12}=\begin{pmatrix}
+    0 & 1
+  \end{pmatrix}, B_{11}=\begin{pmatrix}
+    0 & -3 \\
+    1 & 0
+  \end{pmatrix}, B_{11}=\begin{pmatrix}
+    3 & 0\\
+    0 & 0
+  \end{pmatrix}.$
+  Тогда $C_{11} = A_{11}B_{11} + A_{12}B_{21} = \begin{pmatrix}
+    3 & 6 \\
+    2 & 4
+  \end{pmatrix} + \begin{pmatrix}
+    -1 & 0 \\
+    0 & -3
+  \end{pmatrix} = \begin{pmatrix}
+    2 & 6 \\
+    2 & 1
+  \end{pmatrix}.$ Аналогично находятся остальные $C_{\alpha \beta}.$ В результате получаем $AB=\begin{pmatrix}
+    \begin{tabular}{l | l}
+      2 6 & 0 3 \\
+      2 1 & 3 2 \\ \hline
+      -3 -12 & 0 -6
+    \end{tabular}
+  \end{pmatrix}$.
+\end{example}
+В качестве применения блочных матриц рассмотрим
+\begin{definition}
+  Прямой суммой квадратных матриц $A$ и $B$ порядков $m$ и $n$ соответственно называется квадратная матрица $C$ порядка $\\m+n: C = \begin{pmatrix}
+    A & 0 \\
+    0 & B
+  \end{pmatrix}.$
+\end{definition}
+\noindent \textbf{Обозначение:} $C=A \bigoplus B$.
+\begin{properties}[прямой суммы]
+\begin{enumerate} $ $
+  \item $(A \bigoplus B) \bigoplus C = A \bigoplus (B \bigoplus C)$.
+  \item $A \bigoplus B \neq B \bigoplus A$.
+  \item $(A_{m} \bigoplus A_{n}) + (B_{m} \bigoplus B_{n}) = (A_{m} + A_{n}) \bigoplus (B_{m} + B_{n})$.
+  \item $(A_{m} \bigoplus A_{n})(B_{m} \bigoplus B_{n}) = (A_{m}B_{m}) \bigoplus (A_{n}B_{n})$.
+\end{enumerate}
+Доказательство – самостоятельно.
 \end{properties}
