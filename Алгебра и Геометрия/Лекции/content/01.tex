@@ -1,23 +1,19 @@
 \section{Матрицы}
 \subsection{Основные определения}
-
 \begin{definition}
   Матрицей размеров $m \times n$ над множеством действительных чисел $\mathds{R}$
   называется прямоугольная таблица из $m \cdot n$ вещественных чисел, имеющая $m$ строк и $n$ столбцов:
-
   \[ \begin{array}{cccc}
     a_{11}& a_{12} &\ldots & a_{1n}\\
     a_{21}& a_{22} &\ldots & a_{2n}\\
     \vdots& \vdots &\ddots & \vdots\\
     a_{m1}& a_{m2} &\ldots & a_{mn}
   \end{array} \]
-
   где $a_{ij} \in \mathds{R}, i = \overline{1, m}$ - номер строки,
     $j = \overline{1, n}$ - номер столбца, $a_{i,j}$ - элементы матрицы, $m$ и $n$ - порядки матрицы.
   В этом случае говорят, что рассматриваемая матрица размера $m \times n$.
   Если $m = n$, то матрица называется квадратной, а число $m = n$ - её порядком.
 \end{definition}
-
 Для изображения матрицы применяются либо круглые скобки, либо сдвоенные прямые:
   \[ \left( \begin{array}{cccc}
     a_{11}& a_{12} &\ldots & a_{1n}\\
@@ -33,19 +29,16 @@
     a_{m1}& a_{m2} &\ldots & a_{mn}
     \end{Vmatrix}
   \]
-
 Для краткого обозначения матрицы используются либо заглавные латинские буквы ($A$, $B$, $C$, \dots)
 либо символы ($a_{ij}$), $||a_{ij}||$, указывающие обозначение элементов матрицы;
 либо используется запись
 $A = (a_{i,j})(i = \overline{1,m}$, $j = \overline{1,n})$.
 
 Множество всех матриц размера $m \times n$ бозначается $\mathds{R}_{m \times n} \equiv \mathds{R}_{m,n}$.
-
 \subsubsection{Частные случаи матриц}
 \begin{enumerate}
   \item Если $m = n$, то матрица называется квадратной.
     Её диагональ $a_{1,1}, a_{2,2}, \dots, a_{n,n}$ называется главной диагональю, а $a_{n1}, a_{n-1,2}, \dots, a_{1n}$ – побочной диагональю.
-
   \item Диагональная матрица – это матрица, у которой все ненулевые элементы находятся на главной диагонали, т.е.
     $A = \left( \begin{array}{cccc}
       a_{11}& 0 &\ldots & 0\\
@@ -53,7 +46,6 @@ $A = (a_{i,j})(i = \overline{1,m}$, $j = \overline{1,n})$.
       \vdots& \vdots &\ddots & \vdots\\
       0& 0 &\ldots & a_{mn}
     \end{array} \right)$.
-
   \item Диагональная матрица вида
     $\left( \begin{array}{cccc}
       a& 0 &\ldots & 0\\
@@ -61,26 +53,20 @@ $A = (a_{i,j})(i = \overline{1,m}$, $j = \overline{1,n})$.
       \vdots& \vdots &\ddots & \vdots\\
       0& 0 &\ldots & a
     \end{array} \right)$ называется скалярной.
-
   \item Скалярная матрица с единичными элементами на главной диагонали называется единичной.
     Обозначается $E$ или $E_{n}$, где n - ee порядок.
-
   \item Матрица размера $m \times n$, у которой все элементы равны нулю, называется нулевой и обозначается $O_{m,n}$.
-
   \item Если $m = 1$, то матрица называется строчной, или матрица-строка, или строка.
     Если $n = 1 \rightarrow$ столбцовая, или матрица-столбец, или просто столбец.
 \end{enumerate}
-
 \begin{definition}
   Две матрицы называются равными, если эти матрицы имеют одинаковые порядки и их соответствующие элементы совпадают.
 \end{definition}
-
 \subsection{Операции над матрицами и их свойства}
 \begin{definition}
   Суммой матриц $A$ и $B \in \mathds{R}_{m,n}$ (т.е. имеющих одинаковые порядки) называется матрица $C \in \mathds{R}_{m,n}:c_{ij}=a_{ij}+b_{ij}, i = \overline{1,m}, j = \overline{1,n}$.
 \end{definition}
 \noindent \textbf{Обозначение:} $C = A + B$.
-
 \begin{example}
   \[ \begin{pmatrix}
     1& 2& 3\\
@@ -93,8 +79,7 @@ $A = (a_{i,j})(i = \overline{1,m}$, $j = \overline{1,n})$.
     1& -1& 0
   \end{pmatrix} \]
 \end{example}
-
-\begin{properties}[сложения матицы]
+\begin{properties}[сложения матриц]
   $\\$
   \begin{enumerate}
     \item Коммутативность сложения, т.е. $\forall A,B \in \mathds{R}_{m,n}$ справедливо $A+B=B+A $.
@@ -105,7 +90,6 @@ $A = (a_{i,j})(i = \overline{1,m}$, $j = \overline{1,n})$.
     Доказательство свойств провести самостоятельно прямыми вычисления-ми.
   \end{enumerate}
 \end{properties}
-
 \begin{definition}
   Произведением элемента $\alpha \in \mathds{R}$ на матрицу $A \in \mathds{R}_{m,n}$ называется матрица $C \in \mathds{R}_{m,n} : c_{ij}=\alpha a_{ij}, i = \overline{1, m}, j = \overline{1, n}$.
 \end{definition}
@@ -124,8 +108,9 @@ $\\ \forall \alpha, \beta \in \mathds{R}_{m,n}$ выполняется:
   Доказательство свойств - самостоятельно прямыми вычисления-ми.
 \end{enumerate}
 \end{properties}
-
-\textbf{Замечание.} Разность $A-B$ двух прямоугольных матриц $A$ и $B \in \mathds{R}_{m,n}$ определяется равенством $A-B=A+(-1)B=A+(-B)$.
+\begin{remark}
+  Разность $A-B$ двух прямоугольных матриц $A$ и $B \in \mathds{R}_{m,n}$ определяется равенством $A-B=A+(-1)B=A+(-B)$.
+\end{remark}
 \begin{definition}
   Произведением матриц $A=(a_{ij})$ размера $m \times n$ и $B=(b_{ij})$ размера $n \times p$ называется матрица $C=(c_{ij})$ размеров $m \times p$ такая, что каждый элемент $c_{ij}= \sum \limits_{k=1}^n a_{ik}b_{kj}$.
 \end{definition}
@@ -158,21 +143,18 @@ $\\ \forall \alpha, \beta \in \mathds{R}_{m,n}$ выполняется:
     \end{pmatrix}$.
   \end{enumerate}
 \end{example}
-
 Таким образом, две матрицы можно перемножать, если число столбцов матрицы $A$ равно числу строк матрицы $B$. Тогда матрица $A$ называется согласованной с $B$. Из согласованности $A$ c $B$ не следует согласованность $B$ с $A$. Если даже условие согласования выполняется, то в общем случае $AB \neq BA$.
 \begin{properties}[умножения матриц]
   \begin{enumerate} $\\$
     \item Ассоциативность умножения матриц, т.е. $\forall A \in \mathds{R}_{m,n}, B \in \mathds{R}_{n,p}, C \in \mathds{R}_{p,l}$ справедливо $(AB)C=A(BC)$.
-
-
-    \begin{proof}Из определения 5 следует, что элемент $d_{it}$ матрицы $(AB)C$ равен $d_{it} = \sum \limits_{k=1}^p(\sum \limits_{j=1}^n a_{ij}b_{jk})c_{kt}$, а элемент $\overline{d_{it}}$ матрицы $A(BC)$ равен $\overline{d_{it}} = \sum \limits_{j=1}^n a_{ij}(\sum \limits_{k=1}^p b_{jk}c_{kt})$. Равенство $d_{it}=\overline{d_{it}}$ следует из возможности изменения порядка суммирования.\end{proof}
+    \begin{proof}
+      Из определения 5 следует, что элемент $d_{it}$ матрицы $(AB)C$ равен $d_{it} = \sum \limits_{k=1}^p(\sum \limits_{j=1}^n a_{ij}b_{jk})c_{kt}$, а элемент $\overline{d_{it}}$ матрицы $A(BC)$ равен $\overline{d_{it}} = \sum \limits_{j=1}^n a_{ij}(\sum \limits_{k=1}^p b_{jk}c_{kt})$. Равенство $d_{it}=\overline{d_{it}}$ следует из возможности изменения порядка суммирования.
+    \end{proof}
     \item Дистрибутивность сложения относительно умножения, т.е. $\\ A(B+C) = AB +AC, \forall A \in \mathds{R}_{m,n}, B,C \in \mathds{R}_{n,p}. \\ (A + B)C = AC + BC, \forall A,B \in \mathds{R}_{m,n}, C \in \mathds{R}_{n,p}$.
-
     \begin{proof}
       Доказательство следует из определения суммы и произведения матриц.
     \end{proof}
     \item $E_{m}A = AE_{n} = A, \forall A \in \mathds{R}_{m,n }.$
-
     \begin{proof}
       Пусть $B=(b_{ij}):B=AE_{n}$, и $C=E_{m}A$. Тогда $b_{ij} = \sum \limits_{k=1}^n a_{ik} \delta_{kj} = a_{ij} \delta_{jj} = a_{ij}$. Здесь $\delta_{ij}= \begin{cases} 1,i=j \\ 0,i \neq j \end{cases}$ - символ Кронекера. $\\ c_{ij} = \sum \limits_{k=1}^m \delta_{ik}a_{kj}=a_{ij}$.
     \end{proof}
@@ -181,13 +163,13 @@ $\\ \forall \alpha, \beta \in \mathds{R}_{m,n}$ выполняется:
     \begin{proof}
     Доказательство свойств 4 и 5 проводится аналогично свойству 3.
   \end{proof}
-
     \item $\forall A \in \mathds{R}_{m,n}, \forall B \in \mathds{R}_{n,p}, \forall \alpha \in \mathds{R} \rightarrow \alpha(AB) = (\alpha A)B = A(\alpha B)$.
   \end{enumerate}
 \end{properties}
-\textbf{Замечание.} В общем случае произведение матриц не коммутативно. Например, \[ \begin{pmatrix} 0 & 1\\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 0\\ 1 & 0 \end{pmatrix} \neq \begin{pmatrix} 0 & 0\\ 1  & 0 \end{pmatrix} \begin{pmatrix} 0 & 1\\ 0 & 0 \end{pmatrix} \]
-  Но из свойств 4 и 5 $\rightarrow$ умножение квадратной матрицы на $E$ и $O$ коммутирует. Также коммутирует умножение квадратной матрицы на ска-лярную.
-
+\begin{remark}
+В общем случае произведение матриц не коммутативно. Например, \[ \begin{pmatrix} 0 & 1\\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 0\\ 1 & 0 \end{pmatrix} \neq \begin{pmatrix} 0 & 0\\ 1  & 0 \end{pmatrix} \begin{pmatrix} 0 & 1\\ 0 & 0 \end{pmatrix} \]
+Но из свойств 4 и 5 $\rightarrow$ умножение квадратной матрицы на $E$ и $O$ коммутирует. Также коммутирует умножение квадратной матрицы на ска-лярную.
+\end{remark}
 \subsection{Блочные матрицы.}
 Пусть матрица $A$ при помощи горизонтальных и вертикальных прямых разбита на отдельные прямоугольные клетки, каждая из которых является матрицей меньших раз-меров и называется блоком исходной матрицы. В этом случае $A$ рассматривается как некоторая новая, блочная матрица $A = ||A_{\alpha \beta}||$, элементами которой являются блоки $||A_{\alpha \beta}||$ указанной матрицы ($A_{\alpha \beta}$– элементы матрицы, поэтому $A$ заглавное). Здесь $\alpha$ – номер блочной строки, $\beta$ – столбца.
 
@@ -208,8 +190,8 @@ $\\ \forall \alpha, \beta \in \mathds{R}_{m,n}$ выполняется:
 \end{pmatrix}, A_{22} = \begin{pmatrix}
   a_{24} & a_{25} \\
   a_{34} & a_{35}
-\end{pmatrix}
-  \].
+\end{pmatrix}.
+  \]
 
   Замечательным является факт, что операции с блочными матрицами совер-шаются по тем же правилам, что и с обычными, только в роли элементов вы-ступают блоки. Действительно, если
   $A=\begin{Vmatrix}
@@ -230,7 +212,6 @@ $\\ \forall \alpha, \beta \in \mathds{R}_{m,n}$ выполняется:
   $1 \leq m_{1} < m_{2} < \dotso < m_{k} = m, 1 \leq p_{1} < p_{2} < \dotso < p{q} = p.\\$
   Если $i \in m_{\alpha}, j \in p_{\beta}$, то $c_{ij}=C_{\alpha \beta}$ и $c_{ij}=\sum \limits_{t=1}^n a_{it}b_{tj} = \sum \limits_{t=1}^{n_{1}} + \sum \limits_{t=n_{1}+1}^{n_{2}} + \dotso + \sum \limits_{t=n_{l-1}+1}^{n_{l}}$, откуда следует, что $ C_{\alpha \beta} = A_{\alpha 1}B_{1 \beta} + \dotso + A_{\alpha l}B_{l \beta}$, что и требовалось доказать.
 \end{proof}
-
 \begin{example}
   Пусть $A=\begin{pmatrix}
     \begin{tabular}{l | l}
